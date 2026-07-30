@@ -24,39 +24,40 @@ export default function Navbar() {
             <rect x="30" y="40" width="13" height="16" rx="1" fill="#fff" />
           </svg>
           <div className="flex flex-col">
-            <span className="text-white font-bold text-[18px] font-muli tracking-[1px]">Taylor Calacci</span>
-            <span className="text-white font-cormorant text-[14px] tracking-[2px]">Kale Realty</span>
+            <span style={{ color: '#fff', fontWeight: 700, fontSize: 18, fontFamily: "'Muli', sans-serif", letterSpacing: 1 }}>Taylor Calacci</span>
+            <span style={{ color: '#fff', fontFamily: "'Cormorant Garamond', serif", fontSize: 14, letterSpacing: 2 }}>Kale Realty</span>
           </div>
         </a>
 
         <nav className={`md:flex items-center gap-8 ${menuOpen ? 'flex flex-col absolute top-full left-0 right-0 bg-[#111] md:bg-transparent p-5 md:p-0' : 'hidden'}`}>
-          <a href="#list-with-me" className="text-white text font-muli uppercase no-underline relative pb-1 nav-link">List With Me</a>
-          <a href="#find-a-home" className="text-white text-[16px] font-muli uppercase no-underline relative pb-1 nav-link">FIND A HOME</a>
+          <a href="#list-with-me" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="relative pb-1 nav-link">List With Me</a>
+          <a href="#find-a-home" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="relative pb-1 nav-link">FIND A HOME</a>
 
           <div className="relative group">
-            <a href="#about" className="text-white text-[16px] font-muli uppercase no-underline relative pb-1 nav-link">About Us</a>
+            <a href="#about" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="relative pb-1 nav-link">About Us</a>
             <div className="hidden lg:group-hover:block absolute top-full left-0 bg-[#111] min-w-[200px] p-2.5 z-[100] rounded">
-              <a href="#team" className="block text-white py-2 px-3 text-[14px] font-muli uppercase hover:text-[var(--color-2)]">Team</a>
-              <a href="#mission" className="block text-white py-2 px-3 text-[14px] font-muli uppercase hover:text-[var(--color-2)]">Mission</a>
-              <a href="#experience" className="block text-white py-2 px-3 text-[14px] font-muli uppercase hover:text-[var(--color-2)]">Experience</a>
+              <a href="#team" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="block py-2 px-3 text-[14px] hover:text-[var(--color-2)]">Team</a>
+              <a href="#mission" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="block py-2 px-3 text-[14px] hover:text-[var(--color-2)]">Mission</a>
+              <a href="#experience" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="block py-2 px-3 text-[14px] hover:text-[var(--color-2)]">Experience</a>
             </div>
           </div>
 
           <div className="relative group">
-            <a href="#resources" className="text-white text-[16px] font-muli uppercase no-underline relative pb-1 nav-link">Resources</a>
+            <a href="#resources" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="relative pb-1 nav-link">Resources</a>
             <div className="hidden lg:group-hover:block absolute top-full left-0 bg-[#111] min-w-[200px] p-2.5 z-[100] rounded">
-              <a href="#market" className="block text-white py-2 px-3 text-[14px] font-muli uppercase hover:text-[var(--color-2)]">Market Report</a>
-              <a href="#guides" className="block text-white py-2 px-3 text-[14px] font-muli uppercase hover:text-[var(--color-2)]">Guides</a>
-              <a href="#faq" className="block text-white py-2 px-3 text-[14px] font-muli uppercase hover:text-[var(--color-2)]">FAQ</a>
+              <a href="#market" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="block py-2 px-3 text-[14px] hover:text-[var(--color-2)]">Market Report</a>
+              <a href="#guides" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="block py-2 px-3 text-[14px] hover:text-[var(--color-2)]">Guides</a>
+              <a href="#faq" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="block py-2 px-3 text-[14px] hover:text-[var(--color-2)]">FAQ</a>
             </div>
           </div>
 
-          <a href="#contact" className="text-white text-[16px] font-muli uppercase no-underline relative pb-1 nav-link">Contact</a>
+          <a href="#contact" style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }} className="relative pb-1 nav-link">Contact</a>
         </nav>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden bg-transparent border-none text-white text-[24px] cursor-pointer"
+          style={{ color: '#fff', fontSize: 24, cursor: 'pointer' }}
+          className="md:hidden bg-transparent border-none"
           aria-label="Toggle menu"
         >
           <i className={menuOpen ? 'fas fa-times' : 'fas fa-bars'} />

@@ -5,19 +5,19 @@ export default function FeaturedListings() {
 
   const properties = [
     {
-      image: 'https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/pexels-photo-323780-1920w.jpeg',
+      image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGhvbWV8ZW58MHx8MHx8fDA%3D',
       price: '$1,250,000',
       title: 'Modern Luxury Villa',
       details: '4 Beds | 3 Baths | 3,200 sqft'
     },
     {
-      image: 'https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/pexels-photo-1396122-1920w.jpeg',
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWV8ZW58MHx8MHx8fDA%3D',
       price: '$850,000',
       title: 'Downtown Penthouse',
       details: '2 Beds | 2 Baths | 1,500 sqft'
     },
     {
-      image: 'https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/pexels-photo-106399-1920w.jpeg',
+      image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D',
       price: '$2,100,000',
       title: 'Seaside Estate',
       details: '5 Beds | 4.5 Baths | 5,000 sqft'

@@ -59,9 +59,9 @@ export default function ProvenResults() {
   return (
     <section ref={revealRef} className="bg-[#111] py-[80px]">
       <div className="container mx-auto px-5">
-        <h2 className="text-white text-left mb-0 text-[36px] font-cormorant">PROVEN RESULTS</h2>
+        <h2 className="text-white text-left mb-0 text-[36px] font-cormorant" style={{ color: '#fff' }}>PROVEN RESULTS</h2>
         <div className="w-[60px] h-[2px] bg-[#888] mb-6" />
-        <p className="text-white text-[18px] mb-12">
+        <p className="text-white text-[18px] mb-12" style={{ color: '#fff' }}>
           Where proven results meet your real estate goals . Your success is our best testimonial.
         </p>
 
@@ -69,10 +69,10 @@ export default function ProvenResults() {
           {items.map((item, index) => (
             <div key={item.title} className={`reveal-up delay-${index + 1} transition-transform duration-300 ease-in-out hover:-translate-y-[10px] hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] text-center p-5 rounded-xl`}>
               <div className="mb-5 flex justify-center">{item.icon}</div>
-              <h3 className="text-white mb-3 font-cormorant font-bold text-[25px]">
+              <h3 className="text-white mb-3 font-cormorant font-bold text-[25px]" style={{ color: '#fff' }}>
                 {item.title}
               </h3>
-              <p className="text-white text-[16px] leading-[1.8]">{item.description}</p>
+              <p className="text-white text-[16px] leading-[1.8]" style={{ color: '#fff' }}>{item.description}</p>
             </div>
           ))}
         </div>
