@@ -1,0 +1,41 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  background: var(--color_2);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Muli', sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+@media (max-width: 767px) {
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
