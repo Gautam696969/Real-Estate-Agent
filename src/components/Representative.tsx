@@ -27,7 +27,8 @@ export default function Representative() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ flex: 1, minWidth: 300 }}
+            style={{ flex: 1, minWidth: 300, padding: 120, paddingBottom: 120 }}
+          
           >
             <h2>BUYERS REPRESENTATIVE</h2>
             <motion.div

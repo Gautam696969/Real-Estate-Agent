@@ -44,16 +44,16 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
           style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: 40 }}
         >
-          Luxury REAL ESTATE
+        Exclusive real estate By,
         </motion.h1>
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: 36, marginTop: 8 }}
+          style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: 40, marginTop: 8 }}
         >
-          by Taylor Calacci
-        </motion.h1>
+          Sourav Mukherjee
+        </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

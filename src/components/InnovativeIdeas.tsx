@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import AnimatedSection from './AnimatedSection'
 
 export default function InnovativeIdeas() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -42,7 +41,8 @@ export default function InnovativeIdeas() {
   }
 
   return (
-    <AnimatedSection className="py-[100px]" direction="none">
+    <div className="pt-[250px] pb-[60px]">
+      <div className='mb-6'></div>
       <div className="container mx-auto px-5">
         <motion.h2
           initial={{ opacity: 0, x: -60 }}
@@ -51,7 +51,9 @@ export default function InnovativeIdeas() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-[36px] font-cormorant font-normal text-gray-900 text-center"
         >
+          <div className='mb-16'>
           INNOVATIVE IDEAS FOR YOUR STYLE
+          </div>
         </motion.h2>
         <motion.div
           initial={{ scaleX: 0 }}
@@ -179,6 +181,6 @@ export default function InnovativeIdeas() {
           </div>
         </motion.div>
       </div>
-    </AnimatedSection>
+    </div>
   )
 }

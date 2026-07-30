@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import AnimatedSection from './AnimatedSection'
 
 export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -34,14 +33,15 @@ export default function Testimonials() {
   }
 
   return (
-    <AnimatedSection className="py-[80px] bg-[#f5f5f5]" direction="none">
-      <div className="container">
+    <div className="py-[200px] bg-[#f5f5f5]">
+      <div className="container mx-auto px-5 pt-[60px] pb-[60px]">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           style={{ textAlign: 'center', marginBottom: 8 }}
+
         >
           WHAT <span style={{ color: 'var(--color_2)', fontWeight: 700 }}>MY CLIENTS</span> SAY
         </motion.h2>
@@ -101,7 +101,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 32 }}
+          style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 32, paddingBottom: 32 }}
         >
           <motion.button
             onClick={prevSlide}
@@ -159,6 +159,6 @@ export default function Testimonials() {
           </motion.button>
         </motion.div>
       </div>
-    </AnimatedSection>
+    </div>
   )
 }

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import AnimatedSection from './AnimatedSection'
 
 export default function FeaturedListings() {
   const properties = [
@@ -43,8 +42,9 @@ export default function FeaturedListings() {
   }
 
   return (
-    <AnimatedSection className="min-h-[90vh] bg-[#f5f5f5] flex flex-col" direction="none">
-      <div className="container mx-auto px-5 pt-[100px]">
+    <div className="min-h-screen bg-[#f5f5f5] flex flex-col">
+    
+      <div className="container mx-auto px-5 pt-[120px]">
         <motion.h2
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -52,7 +52,12 @@ export default function FeaturedListings() {
           transition={{ duration: 0.6 }}
           className="text-[36px] font-cormorant font-normal text-gray-900"
         >
-          Featured Listings
+          <h2
+            className="text-[45px] font-cormorant font-normal py-8"
+            style={{ color: "black" }}
+          >
+            Featured Listings
+          </h2>
         </motion.h2>
         <motion.div
           initial={{ scaleX: 0 }}
@@ -65,7 +70,7 @@ export default function FeaturedListings() {
       </div>
 
       <div className="flex-1 flex items-center">
-        <div className="container mx-auto px-5">
+        <div className="container mx-auto px-5 pt-[60px]">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
@@ -120,6 +125,6 @@ export default function FeaturedListings() {
           </motion.div>
         </div>
       </div>
-    </AnimatedSection>
+    </div>
   )
 }
