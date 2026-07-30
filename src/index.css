@@ -1,3 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-1: rgba(17, 17, 17, 1);
+  --color-2: rgba(255, 49, 49, 1);
+  --color-3: rgba(255, 255, 255, 1);
+  --color-4: rgba(125, 123, 123, 1);
+  --color-5: rgba(221, 221, 221, 1);
+  --font-muli: 'Muli', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+}
+
 :root {
   --color_1: rgba(17, 17, 17, 1);
   --color_2: rgba(255, 49, 49, 1);
@@ -16,20 +28,20 @@
 html {
   font-family: 'Muli', sans-serif;
   color: var(--color_1);
-  background: #111;
+  background: #fff;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Muli', sans-serif;
   color: var(--color_1);
-  background: #111;
+  background: #fff;
   line-height: 1.6;
   overscroll-behavior: none;
 }
 
 #root {
-  background: #111;
+  background: #fff;
 }
 
 h1,
@@ -120,4 +132,65 @@ a {
   .section-padding {
     padding: 60px 0;
   }
+}
+
+/* Animations and Premium UI Utilities */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible,
+.visible .reveal-up,
+.visible .reveal-left,
+.visible .reveal-right {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.glass-shadow {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color_2);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
 }
