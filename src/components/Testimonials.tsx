@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { useScrollReveal } from '../hooks/useScrollReveal'
+import { motion, AnimatePresence } from 'framer-motion'
+import AnimatedSection from './AnimatedSection'
 
 export default function Testimonials() {
-  const revealRef = useScrollReveal()
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [direction, setDirection] = useState(1)
   const testimonials = [
     {
       name: 'The Gallamores',
@@ -23,43 +24,89 @@ export default function Testimonials() {
   ]
 
   const prevSlide = () => {
+    setDirection(-1)
     setCurrentSlide((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
   }
 
   const nextSlide = () => {
+    setDirection(1)
     setCurrentSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
   }
 
   return (
-    <section ref={revealRef} style={{ padding: '80px 0', backgroundColor: '#f5f5f5' }} className="section-padding">
+    <AnimatedSection className="py-[80px] bg-[#f5f5f5]" direction="none">
       <div className="container">
-        <h2 className="reveal-up delay-1" style={{ textAlign: 'center', marginBottom: 8 }}>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ textAlign: 'center', marginBottom: 8 }}
+        >
           WHAT <span style={{ color: 'var(--color_2)', fontWeight: 700 }}>MY CLIENTS</span> SAY
-        </h2>
-        <div className="reveal-up delay-2" style={{ width: 60, height: 2, backgroundColor: 'var(--color_2)', marginBottom: 48, marginLeft: 'auto', marginRight: 'auto' }} />
+        </motion.h2>
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{ width: 60, height: 2, backgroundColor: 'var(--color_2)', marginBottom: 48, marginLeft: 'auto', marginRight: 'auto' }}
+        />
 
-        <div className="reveal-up delay-3" style={{ display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap' }}>
-          <div style={{ flex: 1, minWidth: 300 }}>
-            <img
-              src={testimonials[currentSlide].image}
-              alt={testimonials[currentSlide].name}
-              className="glass-shadow"
-              style={{ width: '100%', height: 'auto', borderRadius: 8 }}
-            />
-          </div>
-          <div style={{ flex: 1, minWidth: 300, padding: '0 20px' }}>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, marginBottom: 16, transition: 'all 0.3s' }}>
-              {testimonials[currentSlide].name}
-            </h3>
-            <p style={{ fontSize: 16, lineHeight: 1.8, color: '#2d2e32', fontStyle: 'italic', transition: 'all 0.3s' }}>
-              "{testimonials[currentSlide].quote}"
-            </p>
-          </div>
+        <div className="relative min-h-[300px]">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentSlide}
+              custom={direction}
+              initial={{ opacity: 0, x: direction > 0 ? 100 : -100, rotateY: direction > 0 ? 15 : -15 }}
+              animate={{ opacity: 1, x: 0, rotateY: 0 }}
+              exit={{ opacity: 0, x: direction < 0 ? 100 : -100, rotateY: direction < 0 ? 15 : -15 }}
+              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              style={{ display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap' }}
+            >
+              <div style={{ flex: 1, minWidth: 300 }}>
+                <motion.img
+                  src={testimonials[currentSlide].image}
+                  alt={testimonials[currentSlide].name}
+                  className="glass-shadow"
+                  style={{ width: '100%', height: 'auto', borderRadius: 8 }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.4 }}
+                />
+              </div>
+              <div style={{ flex: 1, minWidth: 300, padding: '0 20px' }}>
+                <motion.h3
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, marginBottom: 16 }}
+                >
+                  {testimonials[currentSlide].name}
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  style={{ fontSize: 16, lineHeight: 1.8, color: '#2d2e32', fontStyle: 'italic' }}
+                >
+                  "{testimonials[currentSlide].quote}"
+                </motion.p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 32 }}>
-          <button
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 32 }}
+        >
+          <motion.button
             onClick={prevSlide}
+            whileHover={{ scale: 1.15, backgroundColor: '#d42626' }}
+            whileTap={{ scale: 0.9 }}
             style={{
               backgroundColor: 'var(--color_2)',
               color: '#fff',
@@ -73,13 +120,26 @@ export default function Testimonials() {
               alignItems: 'center',
               justifyContent: 'center',
             }}
-            className="hover-lift"
             aria-label="Previous testimonial"
           >
             <i className="fas fa-arrow-left" />
-          </button>
-          <button
+          </motion.button>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            {testimonials.map((_, idx) => (
+              <motion.button
+                key={idx}
+                onClick={() => { setDirection(idx > currentSlide ? 1 : -1); setCurrentSlide(idx) }}
+                className={`border-none rounded-full cursor-pointer ${idx === currentSlide ? 'bg-[var(--color-2)]' : 'bg-gray-300'}`}
+                style={{ width: idx === currentSlide ? 24 : 10, height: 10, transition: 'all 0.3s' }}
+                animate={idx === currentSlide ? { width: 24 } : { width: 10 }}
+                whileHover={{ scale: 1.3 }}
+              />
+            ))}
+          </div>
+          <motion.button
             onClick={nextSlide}
+            whileHover={{ scale: 1.15, backgroundColor: '#d42626' }}
+            whileTap={{ scale: 0.9 }}
             style={{
               backgroundColor: 'var(--color_2)',
               color: '#fff',
@@ -93,13 +153,12 @@ export default function Testimonials() {
               alignItems: 'center',
               justifyContent: 'center',
             }}
-            className="hover-lift"
             aria-label="Next testimonial"
           >
             <i className="fas fa-arrow-right" />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
-    </section>
+    </AnimatedSection>
   )
 }

@@ -1,7 +1,7 @@
-import { useScrollReveal } from '../hooks/useScrollReveal'
+import { motion } from 'framer-motion'
+import AnimatedSection from './AnimatedSection'
 
 export default function ProvenResults() {
-  const revealRef = useScrollReveal()
   const items = [
     {
       title: 'DATA DRIVEN',
@@ -56,27 +56,90 @@ export default function ProvenResults() {
     },
   ]
 
-  return (
-    <section ref={revealRef} className="bg-[#111] py-[80px]">
-      <div className="container mx-auto px-5">
-        <h2 className="text-white text-left mb-0 text-[36px] font-cormorant" style={{ color: '#fff' }}>PROVEN RESULTS</h2>
-        <div className="w-[60px] h-[2px] bg-[#888] mb-6" />
-        <p className="text-white text-[18px] mb-12" style={{ color: '#fff' }}>
-          Where proven results meet your real estate goals . Your success is our best testimonial.
-        </p>
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  }
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {items.map((item, index) => (
-            <div key={item.title} className={`reveal-up delay-${index + 1} transition-transform duration-300 ease-in-out hover:-translate-y-[10px] hover:shadow-[0_20px_40px_rgba(255,255,255,0.05)] text-center p-5 rounded-xl`}>
-              <div className="mb-5 flex justify-center">{item.icon}</div>
-              <h3 className="text-white mb-3 font-cormorant font-bold text-[25px]" style={{ color: '#fff' }}>
-                {item.title}
-              </h3>
-              <p className="text-white text-[16px] leading-[1.8]" style={{ color: '#fff' }}>{item.description}</p>
-            </div>
-          ))}
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    },
+  }
+
+  return (
+    <AnimatedSection className="bg-[#111] min-h-[90vh] flex flex-col" direction="none">
+      <div className="container mx-auto px-1 pt-[140px]">
+        <motion.h2
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-white text-left mb-0 text-[36px] font-cormorant"
+          style={{ color: '#fff' }}
+        >
+          Proven Results That Speak for Themselves
+        </motion.h2>
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-[60px] h-[2px] bg-[#888] mb-6"
+          style={{ transformOrigin: 'left' }}
+        />
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-white text-[18px] mb-12"
+          style={{ color: '#fff' }}
+        >
+          Where proven results meet your real estate goals . Your success is our best testimonial.
+        </motion.p>
+      </div>
+
+      <div className="flex-1 flex items-center">
+        <div className="container mx-auto px-1">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {items.map((item) => (
+              <motion.div
+                key={item.title}
+                variants={cardVariants}
+                whileHover={{ y: -12, scale: 1.02 }}
+                className="text-center p-8 md:p-10 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
+              >
+                <motion.div
+                  className="mb-6 flex justify-center"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="scale-125">{item.icon}</div>
+                </motion.div>
+                <h3 className="text-white mb-4 font-cormorant font-bold text-[28px] md:text-[30px]" style={{ color: '#fff' }}>
+                  {item.title}
+                </h3>
+                <p className="text-white text-[17px] md:text-[18px] leading-[1.9]" style={{ color: '#fff' }}>{item.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   )
 }
