@@ -121,7 +121,7 @@ export default function InnovativeIdeas() {
             <h3 className="text-[22px] font-cormorant font-semibold text-gray-900" style={{margin:'50px 0px 0px 0px'}}>
               Explore Our Featured Properties
             </h3>
-            <p className="text-[15px] text-[#555] font-muli leading-relaxed max-w-[650px] mx-auto" style={{margin:'20px 0px 10px 0px' ,textAlign:'center'}}>
+            <p className="text-[15px] text-[#555] font-muli leading-relaxed max-w-[650px] mx-auto text-center" style={{margin:'20px 0px 10px 0px'}}>
               Browse through a handpicked selection of stunning homes that define luxury living.
             </p>
           </div>

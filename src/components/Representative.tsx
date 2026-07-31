@@ -3,7 +3,7 @@ import AnimatedSection from './AnimatedSection'
 
 export default function Representative() {
   return (
-    <AnimatedSection className="py-[140px] min-h-[90vh] flex flex-col justify-center" direction="none">
+    <AnimatedSection className="py-[140px] min-h-[90vh] flex flex-col justify-center" direction="none" style={{paddingBottom: "100px"}}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className=" font-cormorant font-bold text-gray-900" style={{paddingTop:'60px', fontSize:'52px'}}>

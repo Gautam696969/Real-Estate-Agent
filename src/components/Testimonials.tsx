@@ -33,7 +33,7 @@ export default function Testimonials() {
   }
 
   return (
-    <div className="py-[200px] bg-[#f5f5f5]">
+    <div className="py-[200px] bg-[#f5f5f5]" style={{padding:'25px'}}>
       <div className="container mx-auto px-5 pt-[60px] pb-[60px]">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
