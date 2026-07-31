@@ -82,21 +82,7 @@ export default function Footer() {
               style={{ height: 36, width: 'auto', marginTop:'20px' }}
             />
           </motion.a>
-
-          <motion.div className="flex items-center gap-6">
-            <motion.img
-              whileHover={{ scale: 1.08, filter: 'brightness(1.2)' }}
-              src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/equal-housing-opportunity-white-1920w-79h.webp"
-              alt="Equal Housing Opportunity"
-              className="h-9 w-auto"
-            />
-            <motion.img
-              whileHover={{ scale: 1.08 }}
-              src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/DotRealEstate-URL-White-No+cursor+%281%29-158w.png"
-              alt="Dot Real Estate"
-              className="h-9 w-auto"
-            />
-          </motion.div>
+           
         </motion.div>
 
         {/* Main footer grid */}
@@ -176,14 +162,14 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
-                className="flex-1 bg-white/5 border border-white/15 rounded-full px-4 py-2.5 text-[13px] outline-none focus:border-[var(--color-2)] transition-colors"
+                className="flex-1 bg-white/5 border rounded-md border-white/15 px-4 py-2.5 text-[13px] outline-none focus:border-[var(--color-2)] transition-colors"
                 style={{ color: '#fff', fontFamily: "'Muli', sans-serif" }}
               />
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[var(--color-2)] text-white rounded-full px-4 py-2.5 border-none cursor-pointer"
+                className="bg-[var(--color-2)] text-white rounded-md px-4 py-2.5 border-none cursor-pointer w-[25px]"
                 aria-label="Subscribe"
               >
                 <i className="fas fa-paper-plane" />
