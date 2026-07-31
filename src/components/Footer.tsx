@@ -70,18 +70,18 @@ export default function Footer() {
         viewport={{ once: true }}
       >
         {/* Branding badges */}
-        <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-10 mb-12">
-          <motion.div
-            whileHover={{ scale: 1.05, rotate: 2 }}
-            transition={{ duration: 0.3 }}
-            className="flex items-center gap-3"
-          >
-            <img src="https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/Untitled+design+%2810%29+%281%29-270w.png" alt="" />
-            <div className="flex flex-col">
-              <span style={{ color: '#fff', fontWeight: 600, fontSize: 18, fontFamily: "'Muli', sans-serif", letterSpacing: 1 }}>Taylor Calacci</span>
-              <span style={{ color: '#ff6666', fontFamily: "'Cormorant Garamond', serif", fontSize: 14, letterSpacing: 2 }}>Kale Realty</span>
-            </div>
-          </motion.div>
+        <motion.div variants={itemVariants} className="flex flex-wrap items-left justify-center gap-10 mb-12">
+        <motion.a
+          href="/"
+          className="flex items-left gap-3"
+          whileHover={{ scale: 1.02 }}
+        >
+          <img
+            src="/Rav -Mo-Yaan.svg"
+            alt="Taylor Calacci Logo"
+            style={{ height: 30, width: 'auto' }}
+          />
+        </motion.a>
 
           <motion.img
             whileHover={{ scale: 1.08, filter: 'brightness(1.2)' }}

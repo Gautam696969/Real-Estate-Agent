@@ -27,14 +27,10 @@ export default function Navbar() {
           whileHover={{ scale: 1.02 }}
         >
           <img
-            src="https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/Untitled+design+%2810%29+%281%29-270w.png"
+            src="/Rav -Mo-Yaan.svg"
             alt="Taylor Calacci Logo"
-            style={{ height: 60, width: 'auto' }}
+            style={{ height: 40, width: 'auto' }}
           />
-          <div className="flex flex-col">
-            <span style={{ color: '#fff', fontWeight: 700, fontSize: 18, fontFamily: "'Muli', sans-serif", letterSpacing: 1 }}>Taylor Calacci</span>
-            <span style={{ color: '#fff', fontFamily: "'Cormorant Garamond', serif", fontSize: 14, letterSpacing: 2 }}>Kale Realty</span>
-          </div>
         </motion.a>
 
         <nav className={`md:flex items-center gap-8 ${menuOpen ? 'flex flex-col absolute top-full left-0 right-0 bg-[#111] md:bg-transparent p-5 md:p-0' : 'hidden'}`}>
