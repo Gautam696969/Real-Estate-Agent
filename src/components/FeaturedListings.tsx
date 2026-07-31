@@ -19,7 +19,26 @@ export default function FeaturedListings() {
       price: '$2,100,000',
       title: 'Seaside Estate',
       details: '5 Beds | 4.5 Baths | 5,000 sqft'
-    }
+    },
+     {
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWV8ZW58MHx8MHx8fDA%3D',
+      price: '$850,000',
+      title: 'Downtown Penthouse',
+      details: '2 Beds | 2 Baths | 1,500 sqft'
+    },
+     {
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWV8ZW58MHx8MHx8fDA%3D',
+      price: '$850,000',
+      title: 'Downtown Penthouse',
+      details: '2 Beds | 2 Baths | 1,500 sqft'
+    },
+     {
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWV8ZW58MHx8MHx8fDA%3D',
+      price: '$850,000',
+      title: 'Downtown Penthouse',
+      details: '2 Beds | 2 Baths | 1,500 sqft'
+    },
+
   ]
 
   const containerVariants = {
@@ -42,7 +61,7 @@ export default function FeaturedListings() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] flex flex-col">
+    <section id="featured" className="h-[1100px] bg-[#f5f5f5] flex flex-col" style={{padding:"50px"}}>
     
       <div className="container mx-auto px-5 pt-[120px]">
         <motion.h2
@@ -54,7 +73,7 @@ export default function FeaturedListings() {
         >
           <h2
             className="text-[45px] font-cormorant font-normal py-8"
-            style={{ color: "black" }}
+            style={{ color: "black", marginBottom:"25px" }}
           >
             Featured Listings
           </h2>
@@ -69,7 +88,7 @@ export default function FeaturedListings() {
         />
       </div>
 
-      <div className="flex-1 flex items-center">
+      <div className="flex items-center">
         <div className="container mx-auto px-5 pt-[60px]">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -125,6 +144,6 @@ export default function FeaturedListings() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -7,7 +7,7 @@ export default function ProvenResults() {
       title: 'DATA DRIVEN',
       description: 'Market knowledge goes beyond simply neighborhoods.',
       icon: (
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="120" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="5" y="35" width="10" height="20" rx="1" fill="#fff" />
           <rect x="20" y="25" width="10" height="30" rx="1" fill="#fff" />
           <rect x="35" y="15" width="10" height="40" rx="1" fill="#fff" />
@@ -76,41 +76,24 @@ export default function ProvenResults() {
   }
 
   return (
-    <AnimatedSection className="bg-[#111] min-h-[90vh] flex items-center py-[100px]" direction="none">
-      <div className="container mx-auto px-5">
-        <div className="mb-16">
+    <AnimatedSection className="bg-[#111] min-h-[700px] flex items-center py-[50px]" direction="none">
+      <div className="container mx-auto px-5" style={{ margin: "41" }}>
+        <div className="mb-6">
           <motion.h2
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-white text-left mb-0 text-[36px] font-cormorant"
-            style={{ color: '#fff' }}
+            className="text-white text-center mb-20 text-[36px] font-cormorant"
+            style={{ color: '#fff', marginBottom: '124px' }}
           >
-            Proven Results That Speak for Themselves
+            Proven Results That Speak for Themselves<br />
+            <span className="text-[#d6d6d6] font-muli text-[18px] mb-25">Where proven results meet your real estate goals . Your success is our best testimonial.</span>
           </motion.h2>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-[60px] h-[2px] bg-[#888] mb-6"
-            style={{ transformOrigin: 'left' }}
-          />
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-white text-[18px]"
-            style={{ color: '#fff' }}
-          >
-            Where proven results meet your real estate goals . Your success is our best testimonial.
-          </motion.p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -121,7 +104,7 @@ export default function ProvenResults() {
               key={item.title}
               variants={cardVariants}
               whileHover={{ y: -12, scale: 1.02 }}
-              className="text-center p-8 md:p-10 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 h-full flex flex-col items-center"
+              className="text-center p-8 md:p-10 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center"
             >
               <motion.div
                 className="mb-6 flex justify-center"
