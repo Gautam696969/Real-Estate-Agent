@@ -20,7 +20,7 @@ export default function Navbar() {
         scrolled ? 'fixed bg-[#111111f2] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md' : 'absolute bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-3 px-5">
+      <div className="container mx-auto flex items-center justify-between py-3 px-5" style={{height:"100px"}}>
         <motion.a
           href="/"
           className="flex items-center gap-3"

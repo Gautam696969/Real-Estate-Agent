@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import AnimatedSection from './AnimatedSection'
 
 export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
+
   const containerVariants = {
     hidden: {},
     visible: {
@@ -20,96 +24,217 @@ export default function Footer() {
     },
   }
 
+  const quickLinks = [
+    { label: 'Home', href: '#hero' },
+    { label: 'List With Me', href: '#list-with-me' },
+    { label: 'Find a Home', href: '#find-a-home' },
+    { label: 'Featured Listings', href: '#featured' },
+    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'Contact', href: '#contact' },
+  ]
+
+  const services = [
+    { label: 'Buyers Representation', href: '#buyers' },
+    { label: 'Sellers Representation', href: '#sellers' },
+    { label: 'Market Reports', href: '#market' },
+    { label: 'Home Valuation', href: '#valuation' },
+    { label: 'Relocation Services', href: '#relocation' },
+  ]
+
+  const socialLinks = [
+    { label: 'Facebook', icon: 'fab fa-facebook-f' },
+    { label: 'Twitter', icon: 'fab fa-twitter' },
+    { label: 'Instagram', icon: 'fab fa-instagram' },
+    { label: 'YouTube', icon: 'fab fa-youtube' },
+  ]
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (email.trim()) {
+      setSubscribed(true)
+      setEmail('')
+      setTimeout(() => setSubscribed(false), 3000)
+    }
+  }
+
   return (
-    <AnimatedSection as="footer" className="bg-[#111] pt-[60px]" style={{ color: '#fff' }} direction="none">
+    <AnimatedSection as="footer" className="bg-[#111] relative overflow-hidden" style={{ color: '#fff' }} direction="none">
+      {/* Decorative gradient glow */}
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[var(--color-2)] opacity-10 blur-[120px] rounded-full pointer-events-none" />
+
       <motion.div
-        className="container mx-auto px-5"
+        className="container mx-auto px-5 pt-16"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <motion.div variants={itemVariants} className="flex flex-wrap gap-10 mb-10">
-          <motion.div variants={itemVariants} className="flex-1 min-w-[240px]">
-            <motion.h3
-              whileHover={{ x: 5, color: '#ff6666' }}
-              style={{ color: 'var(--color-2)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 25, marginBottom: 12 }}
-            >
-              Contact Details
-            </motion.h3>
-            <p style={{ color: '#fff', fontWeight: 700, fontFamily: "'Muli', sans-serif" }}>taylorcalacci@gmail.com</p>
-            <p style={{ color: '#fff', fontFamily: "'Muli', sans-serif" }}>(224) 436-4201</p>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="flex-1 min-w-[240px] flex items-center justify-center">
-            <motion.img
-              src="https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/Untitled+design+%2810%29+%281%29-270w.png"
-              alt="Taylor Calacci Logo"
-              style={{ height: 80, width: 'auto' }}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              transition={{ duration: 0.3 }}
-            />
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="flex-1 min-w-[240px] flex items-center justify-center">
-            <motion.img
-              whileHover={{ scale: 1.08, filter: 'brightness(1.2)' }}
-              src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/equal-housing-opportunity-white-1920w-79h.webp"
-              alt="Equal Housing Opportunity"
-              className="h-10 w-auto"
-            />
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="flex-1 min-w-[240px] flex items-center justify-center">
-            <motion.img
-              whileHover={{ scale: 1.08 }}
-              src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/DotRealEstate-URL-White-No+cursor+%281%29-158w.png"
-              alt="Dot Real Estate"
-              className="h-10 w-auto"
-            />
-          </motion.div>
-        </motion.div>
-
-        <motion.div variants={itemVariants} className="border-t border-[#333] pt-6 mb-6">
-          <motion.h3
-            whileHover={{ x: 5, color: '#ff6666' }}
-            style={{ color: 'var(--color-2)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 25, marginBottom: 12 }}
+        {/* Branding badges */}
+        <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-10 mb-12">
+          <motion.div
+            whileHover={{ scale: 1.05, rotate: 2 }}
+            transition={{ duration: 0.3 }}
+            className="flex items-center gap-3"
           >
-            Address
-          </motion.h3>
-          <p style={{ color: '#fff', fontFamily: "'Muli', sans-serif" }}>3323 W. Diversey Ave.</p>
-          <p style={{ color: '#fff', fontFamily: "'Muli', sans-serif" }}>Chicago, IL 60647</p>
+            <img src="https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/Untitled+design+%2810%29+%281%29-270w.png" alt="" />
+            <div className="flex flex-col">
+              <span style={{ color: '#fff', fontWeight: 600, fontSize: 18, fontFamily: "'Muli', sans-serif", letterSpacing: 1 }}>Taylor Calacci</span>
+              <span style={{ color: '#ff6666', fontFamily: "'Cormorant Garamond', serif", fontSize: 14, letterSpacing: 2 }}>Kale Realty</span>
+            </div>
+          </motion.div>
+
+          <motion.img
+            whileHover={{ scale: 1.08, filter: 'brightness(1.2)' }}
+            src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/equal-housing-opportunity-white-1920w-79h.webp"
+            alt="Equal Housing Opportunity"
+            className="h-9 w-auto"
+          />
+
+          <motion.img
+            whileHover={{ scale: 1.08 }}
+            src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/DotRealEstate-URL-White-No+cursor+%281%29-158w.png"
+            alt="Dot Real Estate"
+            className="h-9 w-auto"
+          />
         </motion.div>
 
-        <motion.div variants={itemVariants} className="border-t border-[#333] py-6 flex flex-wrap justify-between items-center gap-5">
-          <nav className="flex flex-wrap gap-6">
-            {['List With Me', 'FIND A HOME', 'Services', 'About', 'Testimonials', 'Blog', 'Videos', 'Contact'].map((item) => (
+        {/* Main footer grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Brand column */}
+          <motion.div variants={itemVariants} className="lg:col-span-1">
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
+              About the Broker
+            </h3>
+            <p style={{ color: '#aaa', fontFamily: "'Muli', sans-serif", fontSize: 14, lineHeight: 1.9 }}>
+              Chicago luxury real estate expert dedicated to helping you buy, sell, and invest with confidence. Where proven results meet your real estate goals.
+            </p>
+          </motion.div>
+
+          {/* Quick links */}
+          <motion.div variants={itemVariants}>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
+              Quick <span style={{ color: 'var(--color-2)' }}>Links</span>
+            </h3>
+            <nav className="flex flex-col gap-2.5">
+              {quickLinks.map((link) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  className="nav-link"
+                  style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14, textDecoration: 'none' }}
+                  whileHover={{ x: 5, color: '#fff' }}
+                >
+                  <span className="mr-2 text-[var(--color-2)]">›</span>{link.label}
+                </motion.a>
+              ))}
+            </nav>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div variants={itemVariants}>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
+              Our <span style={{ color: 'var(--color-2)' }}>Services</span>
+            </h3>
+            <nav className="flex flex-col gap-2.5">
+              {services.map((link) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  className="nav-link"
+                  style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14, textDecoration: 'none' }}
+                  whileHover={{ x: 5, color: '#fff' }}
+                >
+                  <span className="mr-2 text-[var(--color-2)]">›</span>{link.label}
+                </motion.a>
+              ))}
+            </nav>
+          </motion.div>
+
+          {/* Contact + Newsletter */}
+          <motion.div variants={itemVariants}>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
+              Get in <span style={{ color: 'var(--color-2)' }}>Touch</span>
+            </h3>
+            <div className="flex flex-col gap-2.5 mb-6" style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14 }}>
+              <p className="flex items-center gap-2"style={{color:"#ff6666"}}>
+                <i className="fas fa-envelope text-[var(--color-2)]" /> taylorcalacci@gmail.com
+              </p>
+              <p className="flex items-center gap-2" style={{color:"#ff6666"}}>
+                <i className="fas fa-phone text-[var(--color-2)]" /> (224) 436-4201
+              </p>
+              <p className="flex items-start gap-2"style={{color:"#ff6666"}}>
+                <i className="fas fa-map-marker-alt text-[var(--color-2)] mt-1" />
+                <span>3323 W. Diversey Ave.<br />Chicago, IL 60647</span>
+              </p>
+            </div>
+
+            <form onSubmit={handleSubscribe} className="flex gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email address"
+                className="flex-1 bg-white/5 border border-white/15 rounded-full px-4 py-2.5 text-[13px] outline-none focus:border-[var(--color-2)] transition-colors"
+                style={{ color: '#fff', fontFamily: "'Muli', sans-serif" }}
+              />
+              <motion.button
+                type="submit"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[var(--color-2)] text-white rounded-full px-4 py-2.5 border-none cursor-pointer"
+                aria-label="Subscribe"
+              >
+                <i className="fas fa-paper-plane" />
+              </motion.button>
+            </form>
+            {subscribed && (
+              <motion.p
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-3 text-[13px]"
+                style={{ color: '#ff6666', fontFamily: "'Muli', sans-serif" }}
+              >
+                ✓ Thanks for subscribing!
+              </motion.p>
+            )}
+          </motion.div>
+        </div>
+
+        {/* Social bar */}
+        <motion.div variants={itemVariants} className="border-t border-[#2a2a2a] py-6 flex flex-wrap justify-center gap-4">
+          {socialLinks.map((link) => (
+            <motion.a
+              key={link.label}
+              href={`#${link.label.toLowerCase()}`}
+              aria-label={link.label}
+              className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center"
+              style={{ color: '#fff', fontSize: 16 }}
+              whileHover={{ y: -4, scale: 1.1, borderColor: 'var(--color-2)', backgroundColor: 'rgba(255,49,49,0.15)' }}
+              transition={{ duration: 0.2 }}
+            >
+              <i className={link.icon} />
+            </motion.a>
+          ))}
+        </motion.div>
+
+        {/* Bottom bar */}
+        <motion.div variants={itemVariants} className="border-t border-[#2a2a2a] py-6 flex flex-wrap justify-between items-center gap-4">
+          <p className="text-[13px]" style={{ color: '#888', fontFamily: "'Muli', sans-serif" }}>
+            &copy; {new Date().getFullYear()} Taylor Calacci, Kale Realty. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            {['Privacy Policy', 'Terms of Service'].map((item) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                style={{ color: '#fff', textTransform: 'uppercase', fontSize: 14, fontFamily: "'Muli', sans-serif", textDecoration: 'none' }}
-                className="relative pb-1 nav-link"
-                whileHover={{ scale: 1.05 }}
+                className="nav-link"
+                style={{ color: '#888', fontSize: 13, fontFamily: "'Muli', sans-serif", textDecoration: 'none' }}
+                whileHover={{ color: '#fff' }}
               >
                 {item}
               </motion.a>
             ))}
-          </nav>
-
-          <motion.div className="flex gap-4" variants={itemVariants}>
-            {['facebook-f', 'twitter', 'instagram', 'youtube'].map((icon) => (
-              <motion.a
-                key={icon}
-                href={`#${icon}`}
-                style={{ color: '#fff', fontSize: 20 }}
-                whileHover={{ y: -4, color: 'var(--color-2)', scale: 1.2 }}
-                transition={{ duration: 0.2 }}
-                aria-label={icon.charAt(0).toUpperCase() + icon.slice(1).replace('-f', '')}
-              >
-                <i className={`fab fa-${icon}`} />
-              </motion.a>
-            ))}
-          </motion.div>
+          </div>
         </motion.div>
       </motion.div>
     </AnimatedSection>
