@@ -21,19 +21,19 @@ export default function FeaturedListings() {
       details: '5 Beds | 4.5 Baths | 5,000 sqft'
     },
      {
-      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWV8ZW58MHx8MHx8fDA%3D',
+      image: 'https://images.unsplash.com/photo-1448630360428-65456885c650?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fGhvbWV8ZW58MHx8MHx8fDA%3D',
       price: '$850,000',
       title: 'Downtown Penthouse',
       details: '2 Beds | 2 Baths | 1,500 sqft'
     },
      {
-      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWV8ZW58MHx8MHx8fDA%3D',
+      image: 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fGhvbWV8ZW58MHx8MHx8fDA%3D',
       price: '$850,000',
       title: 'Downtown Penthouse',
       details: '2 Beds | 2 Baths | 1,500 sqft'
     },
      {
-      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWV8ZW58MHx8MHx8fDA%3D',
+      image: 'https://plus.unsplash.com/premium_photo-1661876449499-26de7959878f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODV8fGhvbWV8ZW58MHx8MHx8fDA%3D',
       price: '$850,000',
       title: 'Downtown Penthouse',
       details: '2 Beds | 2 Baths | 1,500 sqft'
@@ -104,7 +104,7 @@ export default function FeaturedListings() {
                 whileHover={{ y: -14, boxShadow: '0 30px 60px rgba(0,0,0,0.15)' }}
                 className="group bg-white rounded-lg overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)]"
               >
-                <div className="relative overflow-hidden h-[300px]">
+                <div className="relative overflow-hidden h-[300px]" >
                   <motion.img
                     src={prop.image}
                     alt={prop.title}
@@ -132,12 +132,12 @@ export default function FeaturedListings() {
                   <motion.h3
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="text-[var(--color-2)] font-cormorant text-[26px] mb-2"
+                    className="text-[var(--color-2)] font-cormorant text-[26px] mb-2" style={{marginLeft:"15px"}}
                   >
                     {prop.price}
                   </motion.h3>
-                  <h4 className="text-[20px] font-muli mb-2 font-normal text-gray-900">{prop.title}</h4>
-                  <p className="text-[15px] text-[#666] font-muli leading-relaxed">{prop.details}</p>
+                  <h4 className="text-[20px] font-muli mb-2 font-normal text-gray-900" style={{marginLeft:"15px"}}>{prop.title}</h4>
+                  <p className="text-[15px] text-[#666] font-muli leading-relaxed" style={{marginLeft:"15px"}}>{prop.details}</p>
                 </div>
               </motion.div>
             ))}

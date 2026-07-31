@@ -70,39 +70,40 @@ export default function Footer() {
         viewport={{ once: true }}
       >
         {/* Branding badges */}
-        <motion.div variants={itemVariants} className="flex flex-wrap items-left justify-center gap-10 mb-12">
-        <motion.a
-          href="/"
-          className="flex items-left gap-3"
-          whileHover={{ scale: 1.02 }}
-        >
-          <img
-            src="/Rav -Mo-Yaan.svg"
-            alt="Taylor Calacci Logo"
-            style={{ height: 30, width: 'auto' }}
-          />
-        </motion.a>
+        <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-between gap-8 mb-12">
+          <motion.a
+            href="/"
+            className="flex items-center gap-3"
+            whileHover={{ scale: 1.02 }}
+          >
+            <img
+              src="/Rav -Mo-Yaan.svg"
+              alt="Rav-Mo-Yaan Logo"
+              style={{ height: 36, width: 'auto', marginTop:'20px' }}
+            />
+          </motion.a>
 
-          <motion.img
-            whileHover={{ scale: 1.08, filter: 'brightness(1.2)' }}
-            src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/equal-housing-opportunity-white-1920w-79h.webp"
-            alt="Equal Housing Opportunity"
-            className="h-9 w-auto"
-          />
-
-          <motion.img
-            whileHover={{ scale: 1.08 }}
-            src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/DotRealEstate-URL-White-No+cursor+%281%29-158w.png"
-            alt="Dot Real Estate"
-            className="h-9 w-auto"
-          />
+          <motion.div className="flex items-center gap-6">
+            <motion.img
+              whileHover={{ scale: 1.08, filter: 'brightness(1.2)' }}
+              src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/equal-housing-opportunity-white-1920w-79h.webp"
+              alt="Equal Housing Opportunity"
+              className="h-9 w-auto"
+            />
+            <motion.img
+              whileHover={{ scale: 1.08 }}
+              src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/DotRealEstate-URL-White-No+cursor+%281%29-158w.png"
+              alt="Dot Real Estate"
+              className="h-9 w-auto"
+            />
+          </motion.div>
         </motion.div>
 
         {/* Main footer grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand column */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
-            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22}}>
               About the Broker
             </h3>
             <p style={{ color: '#aaa', fontFamily: "'Muli', sans-serif", fontSize: 14, lineHeight: 1.9 }}>
@@ -112,7 +113,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22, marginLeft:-40 }}>
               Quick <span style={{ color: 'var(--color-2)' }}>Links</span>
             </h3>
             <nav className="flex flex-col gap-2.5">
@@ -124,7 +125,7 @@ export default function Footer() {
                   style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14, textDecoration: 'none' }}
                   whileHover={{ x: 5, color: '#fff' }}
                 >
-                  <span className="mr-2 text-[var(--color-2)]">›</span>{link.label}
+                  <span className="text-[var(--color-2)]" style={{marginRight:'12px'}}>●</span>{link.label}
                 </motion.a>
               ))}
             </nav>
@@ -132,8 +133,8 @@ export default function Footer() {
 
           {/* Services */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
-              Our <span style={{ color: 'var(--color-2)' }}>Services</span>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22,  marginLeft:-38}}>
+              Our <span style={{ color: 'var(--color-2)', marginLeft:'42px'}}>Services</span>
             </h3>
             <nav className="flex flex-col gap-2.5">
               {services.map((link) => (
@@ -144,11 +145,12 @@ export default function Footer() {
                   style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14, textDecoration: 'none' }}
                   whileHover={{ x: 5, color: '#fff' }}
                 >
-                  <span className="mr-2 text-[var(--color-2)]">›</span>{link.label}
+                  <span className="text-[var(--color-2)]" style={{marginRight:'12px'}}>●</span>{link.label}
                 </motion.a>
               ))}
             </nav>
           </motion.div>
+
 
           {/* Contact + Newsletter */}
           <motion.div variants={itemVariants}>
@@ -163,7 +165,7 @@ export default function Footer() {
                 <i className="fas fa-phone text-[var(--color-2)]" /> (224) 436-4201
               </p>
               <p className="flex items-start gap-2"style={{color:"#ff6666"}}>
-                <i className="fas fa-map-marker-alt text-[var(--color-2)] mt-1" />
+                <i className="fas fa-map-marker-alt text-[var(--color-2)]" style={{paddingTop:'8px'}} />
                 <span>3323 W. Diversey Ave.<br />Chicago, IL 60647</span>
               </p>
             </div>

@@ -76,7 +76,7 @@ export default function ProvenResults() {
   }
 
   return (
-    <AnimatedSection className="bg-[#111] min-h-[700px] flex items-center py-[50px]" direction="none">
+    <AnimatedSection className="bg-[#111] min-h-[800px] flex items-center py-[50px]" direction="none">
       <div className="container mx-auto px-5" style={{ margin: "41" }}>
         <div className="mb-6">
           <motion.h2
@@ -104,7 +104,7 @@ export default function ProvenResults() {
               key={item.title}
               variants={cardVariants}
               whileHover={{ y: -12, scale: 1.02 }}
-              className="text-center p-8 md:p-10 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center"
+              className="text-center p-8 md:p-10 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center "style={{height:'160px'}}
             >
               <motion.div
                 className="mb-6 flex justify-center"

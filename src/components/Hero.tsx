@@ -94,7 +94,7 @@ export default function Hero() {
         className="hero-window"
       >
         <img
-          src="https://irp.cdn-website.com/b3b084dd/dms3rep/multi/opt/window-67w.png"
+          src="/Rav_Moo_Yan.svg"
           alt="window decoration"
           style={{ width: 80, height: 'auto' }}
         />
