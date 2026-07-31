@@ -5,6 +5,12 @@ export default function Representative() {
   return (
     <AnimatedSection className="py-[140px] min-h-[90vh] flex flex-col justify-center" direction="none">
       <div className="container mx-auto">
+        <div className="text-center mb-16">
+          <h2 className=" font-cormorant font-bold text-gray-900" style={{paddingTop:'60px', fontSize:'52px'}}>
+            Expert <span style={{ color: 'var(--color-2)' }}>Real Estate Solutions</span>
+          </h2>
+        </div>
+
         <div style={{ display: 'flex', gap: 40, alignItems: 'center', marginBottom: 60, flexWrap: 'wrap' }}>
           <motion.div
             initial={{ opacity: 0, x: -80 }}
