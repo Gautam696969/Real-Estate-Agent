@@ -118,10 +118,10 @@ export default function InnovativeIdeas() {
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <div className="text-center mb-10">
-            <h3 className="text-[22px] font-cormorant font-semibold text-gray-900 mb-3">
+            <h3 className="text-[22px] font-cormorant font-semibold text-gray-900" style={{margin:'50px 0px 0px 0px'}}>
               Explore Our Featured Properties
             </h3>
-            <p className="text-[15px] text-[#555] font-muli leading-relaxed max-w-[500px] mx-auto">
+            <p className="text-[15px] text-[#555] font-muli leading-relaxed max-w-[650px] mx-auto" style={{margin:'20px 0px 10px 0px' ,textAlign:'center'}}>
               Browse through a handpicked selection of stunning homes that define luxury living.
             </p>
           </div>
