@@ -8,10 +8,10 @@ export default function ProvenResults() {
       description: 'Market knowledge goes beyond simply neighborhoods.',
       icon: (
         <svg width="120" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="35" width="10" height="20" rx="1" fill="#fff" />
-          <rect x="20" y="25" width="10" height="30" rx="1" fill="#fff" />
-          <rect x="35" y="15" width="10" height="40" rx="1" fill="#fff" />
-          <rect x="50" y="5" width="10" height="50" rx="1" fill="#fff" />
+          <rect x="5" y="45" width="10" height="10" rx="1" fill="#fff" />
+          <rect x="20" y="35" width="10" height="20" rx="1" fill="#fff" />
+          <rect x="35" y="25" width="10" height="30" rx="1" fill="#fff" />
+          <rect x="50" y="15" width="10" height="40" rx="1" fill="#fff" />
           <line x1="2" y1="55" x2="58" y2="55" stroke="#fff" strokeWidth="2" />
         </svg>
       ),
@@ -32,7 +32,7 @@ export default function ProvenResults() {
       title: 'MARKET EXPERTISE',
       description: 'You have questions and I have answers.',
       icon: (
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="60" height="50" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M30 5L50 30H10L30 5Z" fill="#fff" />
           <rect x="15" y="30" width="30" height="25" rx="1" fill="#fff" />
           <rect x="20" y="35" width="20" height="15" rx="1" fill="#111" />
@@ -44,7 +44,7 @@ export default function ProvenResults() {
       title: 'REFERRAL NETWORK',
       description: 'This industry is all about who you know. I can connect you',
       icon: (
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="60" height="50" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="15" cy="15" r="5" stroke="#fff" strokeWidth="3" />
           <circle cx="45" cy="15" r="5" stroke="#fff" strokeWidth="3" />
           <circle cx="30" cy="35" r="5" stroke="#fff" strokeWidth="3" />
