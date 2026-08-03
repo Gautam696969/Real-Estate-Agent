@@ -27,9 +27,9 @@ export default function Navbar() {
           whileHover={{ scale: 1.02 }}
         >
           <img
-            src="/Rav -Mo-Yaan.svg"
+            src="/RMY Icon.svg"
             alt="Taylor Calacci Logo"
-            style={{ height: 40, width: 'auto' }}
+            style={{ height: 60, width: 'auto' }}
           />
         </motion.a>
 
