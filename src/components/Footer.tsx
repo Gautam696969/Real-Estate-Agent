@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import AnimatedSection from './AnimatedSection'
 
 export default function Footer() {
@@ -25,8 +26,8 @@ export default function Footer() {
   }
 
   const quickLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'List With Me', href: '#list-with-me' },
+    { label: 'Home', href: '/' },
+    { label: 'List With Me', href: '/list-with-me' },
     { label: 'Find a Home', href: '#find-a-home' },
     { label: 'Featured Listings', href: '#featured' },
     { label: 'Testimonials', href: '#testimonials' },
@@ -103,17 +104,28 @@ export default function Footer() {
               Quick <span style={{ color: 'var(--color-2)' }}>Links</span>
             </h3>
             <nav className="flex flex-col gap-2.5">
-              {quickLinks.map((link) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  className="nav-link"
-                  style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14, textDecoration: 'none' }}
-                  whileHover={{ x: 5, color: '#fff' }}
-                >
-                  <span className="text-[var(--color-2)]" style={{marginRight:'12px'}}>●</span>{link.label}
-                </motion.a>
-              ))}
+              {quickLinks.map((link) =>
+                link.href.startsWith('/') ? (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className="nav-link"
+                    style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14, textDecoration: 'none' }}
+                  >
+                    <span className="text-[var(--color-2)]" style={{ marginRight: '12px' }}>●</span>{link.label}
+                  </Link>
+                ) : (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    className="nav-link"
+                    style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14, textDecoration: 'none' }}
+                    whileHover={{ x: 5, color: '#fff' }}
+                  >
+                    <span className="text-[var(--color-2)]" style={{ marginRight: '12px' }}>●</span>{link.label}
+                  </motion.a>
+                ),
+              )}
             </nav>
           </motion.div>
 

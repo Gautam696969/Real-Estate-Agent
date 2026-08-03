@@ -1,15 +1,39 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const sectionLinks = ['FIND A HOME', 'About Us', 'Resources', 'Contact']
+
+  const linkStyle = {
+    color: '#fff',
+    textTransform: 'uppercase' as const,
+    fontFamily: "'Muli', sans-serif",
+    textDecoration: 'none',
+  }
+
+  const goToSection = (e: React.MouseEvent, label: string) => {
+    e.preventDefault()
+    const id = label.toLowerCase().replace(/\s+/g, '-')
+    if (location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 150)
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }
+    setMenuOpen(false)
+  }
 
   return (
     <motion.header
@@ -21,32 +45,33 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-3 px-5 h-[70px] md:h-[100px]">
-        <motion.a
-          href="/"
-          className="flex items-center gap-3"
-          whileHover={{ scale: 1.02 }}
-        >
+        <Link to="/" className="flex items-center gap-3" aria-label="Home">
           <img
-            src="/RMY Icon.svg"
+            src="/Rav -Mo-Yaan.svg"
             alt="Taylor Calacci Logo"
-            style={{ height: 60, width: 'auto' }}
+            style={{ height: 40, width: 'auto' }}
           />
-        </motion.a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          {['List With Me', 'FIND A HOME', 'About Us', 'Resources', 'Contact'].map((item, i) => (
-            <motion.a
+          <Link
+            to="/list-with-me"
+            onClick={() => setMenuOpen(false)}
+            style={linkStyle}
+            className="relative pb-1 nav-link hover:scale-105 transition-transform"
+          >
+            List With Me
+          </Link>
+          {sectionLinks.map((item) => (
+            <a
               key={item}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 + i * 0.05 }}
               href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-              style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }}
-              className="relative pb-1 nav-link"
-              whileHover={{ scale: 1.05 }}
+              onClick={(e) => goToSection(e, item)}
+              style={linkStyle}
+              className="relative pb-1 nav-link hover:scale-105 transition-transform"
             >
               {item}
-            </motion.a>
+            </a>
           ))}
         </nav>
 
@@ -71,13 +96,21 @@ export default function Navbar() {
             className="md:hidden bg-[#111] overflow-hidden border-t border-white/10"
           >
             <div className="px-5 pb-6 flex flex-col gap-5">
-              {['List With Me', 'FIND A HOME', 'About Us', 'Resources', 'Contact'].map((item) => (
+              <Link
+                to="/list-with-me"
+                onClick={() => setMenuOpen(false)}
+                className="text-[15px] py-1 border-b border-white/10 nav-link"
+                style={linkStyle}
+              >
+                List With Me
+              </Link>
+              {sectionLinks.map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => goToSection(e, item)}
                   className="text-[15px] py-1 border-b border-white/10 nav-link"
-                  style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }}
+                  style={linkStyle}
                 >
                   {item}
                 </a>

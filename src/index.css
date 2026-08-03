@@ -48,6 +48,16 @@ body {
   overflow-x: clip;
 }
 
+section[id] {
+  scroll-margin-top: 70px;
+}
+
+@media (min-width: 768px) {
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+}
+
 .hero-section {
   min-height: 100vh;
 }
