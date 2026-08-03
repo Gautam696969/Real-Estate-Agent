@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22, marginLeft:-40 }}>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
               Quick <span style={{ color: 'var(--color-2)' }}>Links</span>
             </h3>
             <nav className="flex flex-col gap-2.5">
@@ -119,8 +119,8 @@ export default function Footer() {
 
           {/* Services */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22,  marginLeft:-38}}>
-              Our <span style={{ color: 'var(--color-2)', marginLeft:'42px'}}>Services</span>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
+              Our <span style={{ color: 'var(--color-2)' }}>Services</span>
             </h3>
             <nav className="flex flex-col gap-2.5">
               {services.map((link) => (
@@ -169,7 +169,7 @@ export default function Footer() {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[var(--color-2)] text-white rounded-md px-4 py-2.5 border-none cursor-pointer w-[25px]"
+                className="bg-[var(--color-2)] text-white rounded-md px-4 py-2.5 border-none cursor-pointer flex items-center justify-center"
                 aria-label="Subscribe"
               >
                 <i className="fas fa-paper-plane" />

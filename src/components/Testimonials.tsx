@@ -33,14 +33,14 @@ export default function Testimonials() {
   }
 
   return (
-    <div className="py-[200px] bg-[#f5f5f5]" style={{padding:'25px'}}>
-      <div className="container mx-auto px-5 pt-[60px] pb-[60px]">
+    <div className="py-16 md:py-[100px] bg-[#f5f5f5]">
+      <div className="container mx-auto px-5 pt-10 pb-10 md:pt-[60px] md:pb-[60px]">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: 'center', marginBottom: 8 }}
+          style={{ textAlign: 'center', marginBottom: 8, fontSize: 'clamp(28px, 5vw, 36px)' }}
 
         >
           WHAT <span style={{ color: 'var(--color_2)', fontWeight: 700 }}>MY CLIENTS</span> SAY
@@ -64,7 +64,7 @@ export default function Testimonials() {
               transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
               style={{ display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap' }}
             >
-              <div style={{ flex: 1, minWidth: 300 }}>
+              <div style={{ flex: '1 1 300px', minWidth: 0 }}>
                 <motion.img
                   src={testimonials[currentSlide].image}
                   alt={testimonials[currentSlide].name}
@@ -74,7 +74,7 @@ export default function Testimonials() {
                   transition={{ duration: 0.4 }}
                 />
               </div>
-              <div style={{ flex: 1, minWidth: 300, padding: '0 20px' }}>
+              <div style={{ flex: '1 1 300px', minWidth: 0, padding: '0 20px' }}>
                 <motion.h3
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

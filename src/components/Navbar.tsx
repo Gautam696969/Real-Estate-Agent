@@ -20,7 +20,7 @@ export default function Navbar() {
         scrolled ? 'fixed bg-[#111111f2] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md' : 'absolute bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-3 px-5" style={{height:"100px"}}>
+      <div className="container mx-auto flex items-center justify-between py-3 px-5 h-[70px] md:h-[100px]">
         <motion.a
           href="/"
           className="flex items-center gap-3"
@@ -33,7 +33,7 @@ export default function Navbar() {
           />
         </motion.a>
 
-        <nav className={`md:flex items-center gap-8 ${menuOpen ? 'flex flex-col absolute top-full left-0 right-0 bg-[#111] md:bg-transparent p-5 md:p-0' : 'hidden'}`}>
+        <nav className="hidden md:flex items-center gap-8">
           {['List With Me', 'FIND A HOME', 'About Us', 'Resources', 'Contact'].map((item, i) => (
             <motion.a
               key={item}
@@ -67,13 +67,16 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#111] overflow-hidden"
+            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="md:hidden bg-[#111] overflow-hidden border-t border-white/10"
           >
-            <div className="px-5 pb-5 flex flex-col gap-4">
+            <div className="px-5 pb-6 flex flex-col gap-5">
               {['List With Me', 'FIND A HOME', 'About Us', 'Resources', 'Contact'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-[15px] py-1 border-b border-white/10 nav-link"
                   style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Muli', sans-serif", textDecoration: 'none' }}
                 >
                   {item}

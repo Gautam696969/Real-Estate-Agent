@@ -77,23 +77,23 @@ export default function ProvenResults() {
 
   return (
     <AnimatedSection className="bg-[#111] min-h-[800px] flex items-center py-[50px]" direction="none">
-      <div className="container mx-auto px-5" style={{ margin: "41" }}>
+      <div className="container mx-auto px-5">
         <div className="mb-6">
           <motion.h2
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-white text-center mb-20 text-[36px] font-cormorant"
-            style={{ color: '#fff', marginBottom: '124px' }}
+            className="text-white text-center text-[24px] sm:text-[36px] font-cormorant"
+            style={{ color: '#fff', marginBottom: '60px' }}
           >
             Proven Results That Speak for Themselves<br />
-            <span className="text-[#d6d6d6] font-muli text-[18px] mb-25">Where proven results meet your real estate goals . Your success is our best testimonial.</span>
+            <span className="text-[#d6d6d6] font-muli text-[16px] sm:text-[18px]">Where proven results meet your real estate goals . Your success is our best testimonial.</span>
           </motion.h2>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -104,7 +104,7 @@ export default function ProvenResults() {
               key={item.title}
               variants={cardVariants}
               whileHover={{ y: -12, scale: 1.02 }}
-              className="text-center p-8 md:p-10 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center "style={{height:'160px'}}
+              className="text-center p-6 md:p-10 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center min-h-[200px] md:min-h-[240px]"
             >
               <motion.div
                 className="mb-6 flex justify-center"

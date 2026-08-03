@@ -9,9 +9,9 @@ export default function Hero() {
 
   return (
     <section
+      className="hero-section"
       style={{
         position: 'relative',
-        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -42,7 +42,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: 40 }}
+          style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: 'clamp(24px, 4.5vw, 40px)' }}
         >
         Exclusive real estate By,
         </motion.h1>
@@ -50,7 +50,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: 40, marginTop: 8 }}
+          style={{ color: '#fff', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: 'clamp(30px, 6vw, 40px)', marginTop: 8 }}
         >
           Sourav Mukherjee
         </motion.h2>
@@ -58,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{ color: '#fff', fontFamily: "'Muli', sans-serif", fontSize: 24, fontWeight: 300, marginTop: 24 }}
+          style={{ color: '#fff', fontFamily: "'Muli', sans-serif", fontSize: 'clamp(16px, 3.2vw, 24px)', fontWeight: 300, marginTop: 24 }}
         >
           Find More then just a home, find a lifestyle...
         </motion.p>

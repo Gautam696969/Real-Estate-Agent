@@ -61,22 +61,18 @@ export default function FeaturedListings() {
   }
 
   return (
-    <section id="featured" className="h-[1100px] bg-[#f5f5f5] flex flex-col" style={{padding:"50px"}}>
+    <section id="featured" className="bg-[#f5f5f5] flex flex-col py-16 md:py-24">
     
-      <div className="container mx-auto px-5 pt-[120px]">
+      <div className="container mx-auto px-5">
         <motion.h2
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-[36px] font-cormorant font-normal text-gray-900"
+          className="text-[32px] sm:text-[45px] font-cormorant font-normal py-8 text-gray-900"
+          style={{ color: "black", marginBottom: "10px" }}
         >
-          <h2
-            className="text-[45px] font-cormorant font-normal py-8"
-            style={{ color: "black", marginBottom:"25px" }}
-          >
-            Featured Listings
-          </h2>
+          Featured Listings
         </motion.h2>
         <motion.div
           initial={{ scaleX: 0 }}
@@ -89,7 +85,7 @@ export default function FeaturedListings() {
       </div>
 
       <div className="flex items-center">
-        <div className="container mx-auto px-5 pt-[60px]">
+        <div className="container mx-auto px-5">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
@@ -104,7 +100,7 @@ export default function FeaturedListings() {
                 whileHover={{ y: -14, boxShadow: '0 30px 60px rgba(0,0,0,0.15)' }}
                 className="group bg-white rounded-lg overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)]"
               >
-                <div className="relative overflow-hidden h-[300px]" >
+                <div className="relative overflow-hidden h-[240px] md:h-[300px]" >
                   <motion.img
                     src={prop.image}
                     alt={prop.title}
@@ -128,16 +124,16 @@ export default function FeaturedListings() {
                     </motion.button>
                   </motion.div>
                 </div>
-                <div className="p-8">
+                <div className="p-6 md:p-8">
                   <motion.h3
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="text-[var(--color-2)] font-cormorant text-[26px] mb-2" style={{marginLeft:"15px"}}
+                    className="text-[var(--color-2)] font-cormorant text-[24px] md:text-[26px] mb-2" style={{marginLeft:"15px"}}
                   >
                     {prop.price}
                   </motion.h3>
-                  <h4 className="text-[20px] font-muli mb-2 font-normal text-gray-900" style={{marginLeft:"15px"}}>{prop.title}</h4>
-                  <p className="text-[15px] text-[#666] font-muli leading-relaxed" style={{marginLeft:"15px"}}>{prop.details}</p>
+                  <h4 className="text-[18px] md:text-[20px] font-muli mb-2 font-normal text-gray-900" style={{marginLeft:"15px"}}>{prop.title}</h4>
+                  <p className="text-[14px] md:text-[15px] text-[#666] font-muli leading-relaxed" style={{marginLeft:"15px"}}>{prop.details}</p>
                 </div>
               </motion.div>
             ))}

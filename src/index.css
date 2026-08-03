@@ -30,6 +30,7 @@ html {
   color: var(--color_1);
   background: #fff;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -37,11 +38,30 @@ body {
   color: var(--color_1);
   background: #fff;
   line-height: 1.6;
-  overscroll-behavior: none;
+  overflow-x: clip;
+  min-height: 100dvh;
 }
 
 #root {
   background: #fff;
+  overflow-x: clip;
+}
+
+.hero-section {
+  min-height: 100vh;
+}
+
+@supports (min-height: 100svh) {
+  .hero-section {
+    min-height: 100svh;
+  }
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
 h1,

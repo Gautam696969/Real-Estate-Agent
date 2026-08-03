@@ -3,10 +3,10 @@ import AnimatedSection from './AnimatedSection'
 
 export default function Representative() {
   return (
-    <AnimatedSection className="py-[140px] min-h-[90vh] flex flex-col justify-center" direction="none" style={{paddingBottom: "100px"}}>
+    <AnimatedSection className="py-16 md:py-[140px] min-h-[90vh] flex flex-col justify-center" direction="none">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className=" font-cormorant font-bold text-gray-900" style={{paddingTop:'60px', fontSize:'52px'}}>
+          <h2 className=" font-cormorant font-bold text-gray-900" style={{paddingTop:'40px', fontSize:'clamp(30px, 6vw, 52px)'}}>
             Expert <span style={{ color: 'var(--color-2)' }}>Real Estate Solutions</span>
           </h2>
         </div>
@@ -17,7 +17,7 @@ export default function Representative() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ flex: 1, minWidth: 300 }}
+            style={{ flex: '1 1 300px', minWidth: 0 }}
           >
             <motion.img
               whileHover={{ scale: 1.02, rotate: 1 }}
@@ -33,7 +33,7 @@ export default function Representative() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ flex: 1, minWidth: 300, padding: 120, paddingBottom: 120 }}
+            style={{ flex: '1 1 300px', minWidth: 0, padding: '40px 0 0' }}
           
           >
             <h2>BUYERS REPRESENTATIVE</h2>
@@ -63,7 +63,7 @@ export default function Representative() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ flex: 1, minWidth: 300 }}
+            style={{ flex: '1 1 300px', minWidth: 0 }}
           >
             <h2>SELLERS REPRESENTATIVE</h2>
             <motion.div
@@ -89,7 +89,7 @@ export default function Representative() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ flex: 1, minWidth: 300 }}
+            style={{ flex: '1 1 300px', minWidth: 0 }}
           >
             <motion.img
               whileHover={{ scale: 1.02, rotate: -1 }}
