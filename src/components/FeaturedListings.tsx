@@ -70,7 +70,7 @@ export default function FeaturedListings() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-[32px] sm:text-[45px] font-cormorant font-normal py-8 text-gray-900"
-          style={{ color: "black", marginBottom: "10px" }}
+          style={{ color: "black", margin: "27px 0 13px 0" }}
         >
           Featured Listings
         </motion.h2>

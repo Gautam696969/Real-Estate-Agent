@@ -34,24 +34,17 @@ export default function Testimonials() {
 
   return (
     <div className="py-16 md:py-[100px] bg-[#f5f5f5]">
-      <div className="container mx-auto px-5 pt-10 pb-10 md:pt-[60px] md:pb-[60px]">
+      <div className="container mx-auto px-5"style={{padding:"27px 0px 35px 0px"}}>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: 'center', marginBottom: 8, fontSize: 'clamp(28px, 5vw, 36px)' }}
+          style={{ textAlign: 'center', marginBottom: 20, fontSize: 'clamp(28px, 5vw, 36px)' }}
 
         >
           WHAT <span style={{ color: 'var(--color_2)', fontWeight: 700 }}>MY CLIENTS</span> SAY
         </motion.h2>
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          style={{ width: 60, height: 2, backgroundColor: 'var(--color_2)', marginBottom: 48, marginLeft: 'auto', marginRight: 'auto' }}
-        />
 
         <div className="relative min-h-[300px]">
           <AnimatePresence mode="wait" custom={direction}>
@@ -101,7 +94,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 32, paddingBottom: 32 }}
+          style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 32}}
         >
           <motion.button
             onClick={prevSlide}
