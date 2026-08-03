@@ -236,10 +236,11 @@ export default function InnovativeIdeas() {
             </motion.span>
             <h3 className="mt-5 text-[26px] md:text-[30px] font-cormorant font-semibold text-gray-900">
               Explore Our Featured Properties
+              <p className="text-lg text-gray-500 mt-2">
+                Browse through a handpicked selection of stunning homes that define luxury living.
+              </p>
             </h3>
-            <p className="mt-4 text-[10px] text-[#555] font-muli leading-relaxed max-w-[600px] mx-auto text-center">
-              Browse through a handpicked selection of stunning homes that define luxury living.
-            </p>
+
           </div>
 
           <div className="relative overflow-hidden rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.18)]">
