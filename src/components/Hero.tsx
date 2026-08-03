@@ -94,8 +94,8 @@ export default function Hero() {
         className="hero-window"
       >
         <img
-          src="/Rav_Moo_Yan.svg"
-          alt="window decoration"
+          src="/RMY Icon.svg"
+          alt="Rav_Moo_Yan"
           style={{ width: 80, height: 'auto' }}
         />
       </motion.div>

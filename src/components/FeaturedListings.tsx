@@ -42,7 +42,7 @@ export default function FeaturedListings() {
   ]
 
   const containerVariants = {
-    hidden: {},
+    hidden: {}, 
     visible: {
       transition: {
         staggerChildren: 0.15,
@@ -74,18 +74,10 @@ export default function FeaturedListings() {
         >
           Featured Listings
         </motion.h2>
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-[60px] h-[2px] bg-[#ddd] mb-12"
-          style={{ transformOrigin: 'left' }}
-        />
       </div>
 
       <div className="flex items-center">
-        <div className="container mx-auto px-5">
+        <div className="container mx-auto px-5" style={{padding: '27px 0 40px 0'}}>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}

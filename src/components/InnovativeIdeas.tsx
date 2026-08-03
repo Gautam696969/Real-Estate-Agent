@@ -42,7 +42,7 @@ export default function InnovativeIdeas() {
 
   return (
     <section className="py-16 md:py-40 bg-white overflow-hidden">
-      <div className="container mx-auto px-5">
+      <div className="container mx-auto px-5"style={{padding:'40px 0 75px 0'}}>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

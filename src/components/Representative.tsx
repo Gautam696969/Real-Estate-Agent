@@ -3,10 +3,10 @@ import AnimatedSection from './AnimatedSection'
 
 export default function Representative() {
   return (
-    <AnimatedSection className="py-16 md:py-[140px] min-h-[90vh] flex flex-col justify-center" direction="none">
+    <AnimatedSection className="py-16 md:py-[140px] min-h-[90vh] flex flex-col justify-center" direction="none" style={{paddingBottom:70}}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className=" font-cormorant font-bold text-gray-900" style={{paddingTop:'40px', fontSize:'clamp(30px, 6vw, 52px)'}}>
+          <h2 className=" font-cormorant font-bold text-gray-900" style={{padding: '40px 0 50px 0', fontSize:'clamp(30px, 6vw, 52px)'}}>
             Expert <span style={{ color: 'var(--color-2)' }}>Real Estate Solutions</span>
           </h2>
         </div>
