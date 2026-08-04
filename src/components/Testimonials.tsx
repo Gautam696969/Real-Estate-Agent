@@ -6,25 +6,25 @@ export default function Testimonials() {
   const [direction, setDirection] = useState(1)
   const testimonials = [
     {
-      name: 'Sourav Mukherjee',
+      name: 'Vinay Sharma',
      quote: "Professional service, expert guidance, and a seamless experience from start to finish. I couldn't have asked for a better team to handle my property sale.", 
-      image: 'https://ravmoyaanrealty.com/images/team/sir.png',
+      image: 'https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29uc3xlbnwwfHwwfHx8MA%3D%3D',
     },
     {
-      name: 'Ankita Ghosh',
+      name: 'Kavita Gupta',
       quote: "The team did an amazing job helping me find the perfect home. They were professional, knowledgeable, organized, and always available to answer my questions. I couldn't have asked for a better experience.",
-      image: 'https://ravmoyaanrealty.com/images/team/ankita1.png',
+      image: 'https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww',
     },
     {
-      name: 'Vishwendra Singh Yadav',
+      name: 'Arjun Sen',
       quote: "Highly recommend this realty team! Their attention to detail, market knowledge, and dedication made selling my home stress-free and efficient. I received multiple offers and achieved my target price with their expert guidance.",
-      image: 'https://ravmoyaanrealty.com/images/team/vish.png',
+      image: 'https://img.magnific.com/free-photo/young-handsome-man-wearing-casual-tshirt-blue-background-happy-face-smiling-with-crossed-arms-looking-camera-positive-person_839833-12963.jpg?semt=ais_test_b&w=740&q=80',
     },
 
     {
-      name: 'Tapas Nayak',
+      name: 'Rahul Vishwkarna',
       quote: "From the moment I met the team, I knew I was in good hands. They are passionate, dedicated, and genuinely care about their clients' success. Highly recommend!",
-      image: 'https://ravmoyaanrealty.com/images/team/tapas.png',
+      image: 'https://img.magnific.com/free-photo/handsome-bearded-guy-posing-against-white-wall_273609-20597.jpg?semt=ais_hybrid&w=740&q=80',
     },
   ]
 
