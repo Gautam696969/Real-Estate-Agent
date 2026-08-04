@@ -6,19 +6,25 @@ export default function Testimonials() {
   const [direction, setDirection] = useState(1)
   const testimonials = [
     {
-      name: 'The Gallamores',
-      quote: "I wanted to sell quickly and at a good price. In just a few weeks, I got the price I wanted.",
-      image: 'https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/pexels-photo-3763188-1920w.jpeg',
+      name: 'Sourav Mukherjee',
+     quote: "Professional service, expert guidance, and a seamless experience from start to finish. I couldn't have asked for a better team to handle my property sale.", 
+      image: 'https://ravmoyaanrealty.com/images/team/sir.png',
     },
     {
-      name: 'The Braxtons',
-      quote: "Glenda did a great job helping me find what I was looking for in a home. Organized, knowledgeable and friendly.",
-      image: 'https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/pexels-photo-415829-1920w.jpeg',
+      name: 'Ankita Ghosh',
+      quote: "The team did an amazing job helping me find the perfect home. They were professional, knowledgeable, organized, and always available to answer my questions. I couldn't have asked for a better experience.",
+      image: 'https://ravmoyaanrealty.com/images/team/ankita1.png',
     },
     {
-      name: 'The Mortons',
-      quote: "I wanted to sell quickly and at a good price. In just a few weeks, I got the price I wanted.",
-      image: 'https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/pexels-photo-3785079-1920w.jpeg',
+      name: 'Vishwendra Singh Yadav',
+      quote: "Highly recommend this realty team! Their attention to detail, market knowledge, and dedication made selling my home stress-free and efficient. I received multiple offers and achieved my target price with their expert guidance.",
+      image: 'https://ravmoyaanrealty.com/images/team/vish.png',
+    },
+
+    {
+      name: 'Tapas Nayak',
+      quote: "From the moment I met the team, I knew I was in good hands. They are passionate, dedicated, and genuinely care about their clients' success. Highly recommend!",
+      image: 'https://ravmoyaanrealty.com/images/team/tapas.png',
     },
   ]
 
@@ -57,15 +63,19 @@ export default function Testimonials() {
               transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
               style={{ display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap' }}
             >
-              <div style={{ flex: '1 1 300px', minWidth: 0 }}>
-                <motion.img
-                  src={testimonials[currentSlide].image}
-                  alt={testimonials[currentSlide].name}
-                  className="glass-shadow"
-                  style={{ width: '100%', height: 'auto', borderRadius: 8 }}
-                  whileHover={{ scale: 1.02 }}
+              <div style={{ flex: '1 1 300px', minWidth: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <motion.div
+                  className="glass-shadow relative overflow-hidden rounded-2xl bg-white border border-gray-100"
+                  style={{ width: 'min(100%, 340px)', aspectRatio: '4 / 5' }}
+                  whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.4 }}
-                />
+                >
+                  <img
+                    src={testimonials[currentSlide].image}
+                    alt={testimonials[currentSlide].name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+                  />
+                </motion.div>
               </div>
               <div style={{ flex: '1 1 300px', minWidth: 0, padding: '0 20px' }}>
                 <motion.h3
