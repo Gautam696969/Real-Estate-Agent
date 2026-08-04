@@ -40,20 +40,20 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={`w-full z-[1000] top-0 transition-all duration-300 ease-in-out ${
+      className={`w-full max-w-full inset-x-0 top-0 z-[1000] transition-all duration-300 ease-in-out ${
         scrolled ? 'fixed bg-[#111111f2] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md' : 'absolute bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-3 px-5 h-[70px] md:h-[100px]">
-        <Link to="/" className="flex items-center gap-3" aria-label="Home">
+      <div className="mx-auto flex h-[70px] w-full max-w-[1200px] items-center justify-between px-5 py-3 md:h-[100px]">
+        <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Home">
           <img
             src="/RMY Icon.svg"
             alt="Taylor Calacci Logo"
-            style={{ height: 50, width: 'auto' }}
+            style={{ height: 50, width: 'auto', maxWidth: '40vw' }}
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 whitespace-nowrap">
           <Link
             to="/list-with-me"
             onClick={() => setMenuOpen(false)}
@@ -78,7 +78,7 @@ export default function Navbar() {
         <motion.button
           onClick={() => setMenuOpen(!menuOpen)}
           style={{ color: '#fff', fontSize: 24, cursor: 'pointer' }}
-          className="md:hidden bg-transparent border-none"
+          className="lg:hidden shrink-0 bg-transparent border-none"
           aria-label="Toggle menu"
           whileTap={{ scale: 0.9 }}
         >
@@ -93,7 +93,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="md:hidden bg-[#111] overflow-hidden border-t border-white/10"
+            className="lg:hidden bg-[#111] overflow-hidden border-t border-white/10"
           >
             <div className="px-5 pb-6 flex flex-col gap-5">
               <Link
