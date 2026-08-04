@@ -17,11 +17,13 @@ export default function Navbar() {
   const sectionLinks = ['FIND A HOME', 'About Us', 'Resources', 'Contact']
 
   const linkStyle = {
-    color: '#fff',
-    textTransform: 'uppercase' as const,
     fontFamily: "'Muli', sans-serif",
+    textTransform: 'uppercase' as const,
     textDecoration: 'none',
   }
+
+  const navLinkClass =
+    'group relative inline-block pb-1 text-white transition-all duration-300 ease-out hover:-translate-y-[2px] hover:text-[#ffb0b3] after:absolute after:inset-x-0 after:-bottom-[3px] after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-[#e21b22] after:to-[#ff5a5f] after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100'
 
   const goToSection = (e: React.MouseEvent, label: string) => {
     e.preventDefault()
@@ -59,7 +61,7 @@ export default function Navbar() {
             to="/"
             onClick={() => setMenuOpen(false)}
             style={linkStyle}
-            className="relative pb-1 nav-link hover:scale-105 transition-transform"
+            className={navLinkClass}
           >
             Home
           </Link>
@@ -67,7 +69,7 @@ export default function Navbar() {
             to="/list-with-me"
             onClick={() => setMenuOpen(false)}
             style={linkStyle}
-            className="relative pb-1 nav-link hover:scale-105 transition-transform"
+            className={navLinkClass}
           >
             List With Me
           </Link>
@@ -77,7 +79,7 @@ export default function Navbar() {
               href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
               onClick={(e) => goToSection(e, item)}
               style={linkStyle}
-              className="relative pb-1 nav-link hover:scale-105 transition-transform"
+              className={navLinkClass}
             >
               {item}
             </a>
@@ -108,7 +110,7 @@ export default function Navbar() {
               <Link
                 to="/list-with-me"
                 onClick={() => setMenuOpen(false)}
-                className="text-[15px] py-1 border-b border-white/10 nav-link"
+                className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
                 style={linkStyle}
               >
                 List With Me
@@ -118,7 +120,7 @@ export default function Navbar() {
                   key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                   onClick={(e) => goToSection(e, item)}
-                  className="text-[15px] py-1 border-b border-white/10 nav-link"
+                  className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
                   style={linkStyle}
                 >
                   {item}
