@@ -26,7 +26,7 @@ export default function Footer() {
   }
 
   const quickLinks = [
-    { label: 'Home', href: '/' },
+    { label: 'Home', href: '#' },
     { label: 'List With Me', href: '/list-with-me' },
     { label: 'Find a Home', href: '#find-a-home' },
     { label: 'Featured Listings', href: '#featured' },
@@ -109,7 +109,7 @@ export default function Footer() {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className="nav-link"
+                    className="nav-link transition-all duration-200 hover:translate-x-[5px] hover:text-white"
                     style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14, textDecoration: 'none' }}
                   >
                     <span className="text-[var(--color-2)]" style={{ marginRight: '12px' }}>●</span>{link.label}
