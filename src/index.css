@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
-@theme {
+.hero-section {
+  min-height: 100vh;
+}
+/* @theme {
   --color-1: rgba(17, 17, 17, 1);
   --color-2: rgba(226, 27, 34, 1);
   --color-3: rgba(255, 255, 255, 1);
@@ -56,10 +59,6 @@ section[id] {
   section[id] {
     scroll-margin-top: 100px;
   }
-}
-
-.hero-section {
-  min-height: 100vh;
 }
 
 @supports (min-height: 100svh) {
@@ -229,4 +228,4 @@ a {
 }
 .nav-link:hover::after {
   width: 100%;
-}
+} */

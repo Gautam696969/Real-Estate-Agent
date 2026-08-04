@@ -47,9 +47,9 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between py-3 px-5 h-[70px] md:h-[100px]">
         <Link to="/" className="flex items-center gap-3" aria-label="Home">
           <img
-            src="/Rav -Mo-Yaan.svg"
+            src="/RMY Icon.svg"
             alt="Taylor Calacci Logo"
-            style={{ height: 40, width: 'auto' }}
+            style={{ height: 50, width: 'auto' }}
           />
         </Link>
 
