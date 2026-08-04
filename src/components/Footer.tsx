@@ -157,10 +157,11 @@ export default function Footer() {
             </h3>
             <div className="flex flex-col gap-2.5 mb-6" style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14 }}>
               <p className="flex items-center gap-2"style={{color:"#ff6666"}}>
-                <i className="fas fa-envelope text-[var(--color-2)]" /> taylorcalacci@gmail.com
+                <i className="fas fa-envelope text-[var(--color-2)]" /> sourav.mukherjee@ravmoyaanrealty.com
+
               </p>
               <p className="flex items-center gap-2" style={{color:"#ff6666"}}>
-                <i className="fas fa-phone text-[var(--color-2)]" /> (224) 436-4201
+                <i className="fas fa-phone text-[var(--color-2)]" /> (224) 772 3760
               </p>
               <p className="flex items-start gap-2"style={{color:"#ff6666"}}>
                 <i className="fas fa-map-marker-alt text-[var(--color-2)]" style={{paddingTop:'8px'}} />
@@ -220,7 +221,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <motion.div variants={itemVariants} className="border-t border-[#2a2a2a] py-6 flex flex-wrap justify-between items-center gap-4">
           <p className="text-[13px]" style={{ color: '#888', fontFamily: "'Muli', sans-serif" }}>
-            &copy; {new Date().getFullYear()} Taylor Calacci, Kale Realty. All rights reserved.
+            &copy; {new Date().getFullYear()} Rav-Mo-Yaan Realty. All rights reserved.
           </p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms of Service'].map((item) => (

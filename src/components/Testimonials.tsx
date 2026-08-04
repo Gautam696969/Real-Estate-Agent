@@ -96,23 +96,13 @@ export default function Testimonials() {
           transition={{ duration: 0.6, delay: 0.4 }}
           style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 32}}
         >
-          <motion.button
+         <motion.button
             onClick={prevSlide}
-            whileHover={{ scale: 1.15, backgroundColor: '#d42626' }}
             whileTap={{ scale: 0.9 }}
-            style={{
-              backgroundColor: 'var(--color_2)',
-              color: '#fff',
-              border: 'none',
-              width: 40,
-              height: 40,
-              borderRadius: '50%',
-              cursor: 'pointer',
-              fontSize: 16,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
+            whileHover={{ scale: 1.15 }}
+            className="
+              relative w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-2)] to-[#8f0d13] text-white border-none cursor-pointer text-base flex items-center justify-center
+            "
             aria-label="Previous testimonial"
           >
             <i className="fas fa-arrow-left" />
@@ -129,23 +119,11 @@ export default function Testimonials() {
               />
             ))}
           </div>
-          <motion.button
+         <motion.button
             onClick={nextSlide}
-            whileHover={{ scale: 1.15, backgroundColor: '#d42626' }}
             whileTap={{ scale: 0.9 }}
-            style={{
-              backgroundColor: 'var(--color_2)',
-              color: '#fff',
-              border: 'none',
-              width: 40,
-              height: 40,
-              borderRadius: '50%',
-              cursor: 'pointer',
-              fontSize: 16,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
+            whileHover={{ scale: 1.15 }}
+            className="relative w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-2)] to-[#8f0d13] text-white border-none cursor-pointer text-base flex items-center justify-center"
             aria-label="Next testimonial"
           >
             <i className="fas fa-arrow-right" />

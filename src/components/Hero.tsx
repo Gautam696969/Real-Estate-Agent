@@ -69,21 +69,21 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           style={{ width: 80, height: 2, backgroundColor: 'var(--color-2)', margin: '30px auto 0', transformOrigin: 'center' }}
         />
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.8 }}
-          style={{ marginTop: 40 }}
-        >
-          <a
-            href="#featured"
-            className="btn"
-            style={{ display: 'inline-block', textDecoration: 'none' }}
-          >
-            Explore Listings
-          </a>
-        </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 1.8 }}
+  className="mt-10"
+>
+  <motion.a
+    href="#featured"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className=" inline-flex items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-2)] to-[#8f0d13] px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white shadow-lg transition-all duration-300 hover:shadow-xl"
+  >
+    Explore Listings
+  </motion.a>
+</motion.div>
       </motion.div>
 
       <motion.div
