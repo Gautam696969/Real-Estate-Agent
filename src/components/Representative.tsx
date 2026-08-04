@@ -3,12 +3,20 @@ import AnimatedSection from './AnimatedSection'
 
 export default function Representative() {
   return (
-    <AnimatedSection className="py-16 md:py-[140px] min-h-[90vh] flex flex-col justify-center" direction="none" style={{paddingBottom:70}}>
+    <AnimatedSection className="py-16 md:py-[50px] min-h-[90vh] flex flex-col justify-center" direction="none" style={{paddingBottom:70}}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className=" font-cormorant font-bold text-gray-900" style={{padding: '40px 0 50px 0', fontSize:'clamp(30px, 6vw, 52px)'}}>
+          <h2 className=" font-cormorant font-bold text-gray-900" style={{padding: '40px 0 20px 0', fontSize:'clamp(30px, 6vw, 52px)'}}>
             Expert <span style={{ color: 'var(--color-2)' }}>Real Estate Solutions</span>
           </h2>
+          <p
+            className="font-muli"
+            style={{ maxWidth: 720, margin: '0 auto', fontSize: 17, lineHeight: 1.8, color: '#555' }}
+          > 
+            From your first home to your final sale, I provide dedicated, full-service representation
+            at every step — combining market insight, strategic marketing, and skilled negotiation so
+            you get the results you deserve.
+          </p>
         </div>
 
         <div style={{ display: 'flex', gap: 40, alignItems: 'center', marginBottom: 60, flexWrap: 'wrap' }}>
@@ -36,7 +44,7 @@ export default function Representative() {
             style={{ flex: '1 1 300px', minWidth: 0, padding: '40px 0 0' }}
           
           >
-            <h2>BUYERS REPRESENTATIVE</h2>
+            <h2 style={{fontSize: 30}}>BUYERS REPRESENTATIVE</h2>
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -65,7 +73,7 @@ export default function Representative() {
             transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             style={{ flex: '1 1 300px', minWidth: 0 }}
           >
-            <h2>SELLERS REPRESENTATIVE</h2>
+            <h2 style={{fontSize: 30}}>SELLERS REPRESENTATIVE</h2>
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
