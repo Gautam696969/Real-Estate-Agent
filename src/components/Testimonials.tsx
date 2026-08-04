@@ -22,7 +22,7 @@ export default function Testimonials() {
     },
 
     {
-      name: 'Rahul Vishwkarna',
+      name: 'Rahul Vishwakarma',
       quote: "From the moment I met the team, I knew I was in good hands. They are passionate, dedicated, and genuinely care about their clients' success. Highly recommend!",
       image: 'https://img.magnific.com/free-photo/handsome-bearded-guy-posing-against-white-wall_273609-20597.jpg?semt=ais_hybrid&w=740&q=80',
     },
