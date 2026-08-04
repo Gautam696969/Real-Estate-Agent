@@ -53,7 +53,16 @@ export default function Navbar() {
           />
         </Link>
 
+
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 whitespace-nowrap">
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
+            style={linkStyle}
+            className="relative pb-1 nav-link hover:scale-105 transition-transform"
+          >
+            Home
+          </Link>
           <Link
             to="/list-with-me"
             onClick={() => setMenuOpen(false)}
