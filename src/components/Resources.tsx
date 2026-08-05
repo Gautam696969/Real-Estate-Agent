@@ -302,7 +302,7 @@ export default function Resources() {
                       onClick={() => setDownPaymentPercent(pct)}
                       className={`flex-1 py-2 rounded-xl text-[12px] font-muli font-bold transition-all ${
                         downPaymentPercent === pct
-                          ? 'bg-[var(--color-2)] text-white shadow-sm'
+                          ? 'bg-black text-white shadow-sm'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                     >
