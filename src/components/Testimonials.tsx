@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FaStar } from "react-icons/fa";
 
 export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -7,23 +8,27 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: 'Vinay Sharma',
-     quote: "Professional service, expert guidance, and a seamless experience from start to finish. I couldn't have asked for a better team to handle my property sale.", 
+      rating:5,
+      quote: "The team made my home-buying experience smooth and stress-free. They understood my requirements, kept me informed throughout the process, and helped me find the perfect property. I highly recommend their services.",
       image: 'https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29uc3xlbnwwfHwwfHx8MA%3D%3D',
     },
     {
       name: 'Kavita Gupta',
-      quote: "The team did an amazing job helping me find the perfect home. They were professional, knowledgeable, organized, and always available to answer my questions. I couldn't have asked for a better experience.",
+      rating:5,
+      quote: "From property visits to the final paperwork, everything was handled with care and professionalism. I truly appreciate their honesty and dedication throughout the process.",
       image: 'https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww',
     },
     {
       name: 'Arjun Sen',
-      quote: "Highly recommend this realty team! Their attention to detail, market knowledge, and dedication made selling my home stress-free and efficient. I received multiple offers and achieved my target price with their expert guidance.",
+      rating:4,
+      quote: "Their market knowledge and attention to detail helped me find the perfect property within my budget. I couldn't be happier with the experience and highly recommend their services.",
       image: 'https://img.magnific.com/free-photo/young-handsome-man-wearing-casual-tshirt-blue-background-happy-face-smiling-with-crossed-arms-looking-camera-positive-person_839833-12963.jpg?semt=ais_test_b&w=740&q=80',
     },
 
     {
       name: 'Rahul Vishwakarma',
-      quote: "From the moment I met the team, I knew I was in good hands. They are passionate, dedicated, and genuinely care about their clients' success. Highly recommend!",
+      rating:5,
+      quote: "From start to finish, the team was extremely professional and supportive. They guided me at every step and made the process incredibly easy. I'm very happy with my new home!",
       image: 'https://img.magnific.com/free-photo/handsome-bearded-guy-posing-against-white-wall_273609-20597.jpg?semt=ais_hybrid&w=740&q=80',
     },
   ]
@@ -82,10 +87,20 @@ export default function Testimonials() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, marginBottom: 16 }}
+                  style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, marginBottom: 8 }}
                 >
                   {testimonials[currentSlide].name}
                 </motion.h3>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.25 }}
+                  className="flex items-center gap-1 mb-3"
+                >
+                  {[...Array(testimonials[currentSlide].rating)].map((_, index) => (
+                    <FaStar key={index} className="text-yellow-600 text-lg" />
+                  ))}
+                </motion.div>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
