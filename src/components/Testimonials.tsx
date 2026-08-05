@@ -1,105 +1,160 @@
 import { useState } from 'react'
-import { useScrollReveal } from '../hooks/useScrollReveal'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FaStar } from "react-icons/fa";
 
 export default function Testimonials() {
-  const revealRef = useScrollReveal()
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [direction, setDirection] = useState(1)
   const testimonials = [
     {
-      name: 'The Gallamores',
-      quote: "I wanted to sell quickly and at a good price. In just a few weeks, I got the price I wanted.",
-      image: 'https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/pexels-photo-3763188-1920w.jpeg',
+      name: 'Vinay Sharma',
+      rating:5,
+      quote: "The team made my home-buying experience smooth and stress-free. They understood my requirements, kept me informed throughout the process, and helped me find the perfect property. I highly recommend their services.",
+      image: 'https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29uc3xlbnwwfHwwfHx8MA%3D%3D',
     },
     {
-      name: 'The Braxtons',
-      quote: "Glenda did a great job helping me find what I was looking for in a home. Organized, knowledgeable and friendly.",
-      image: 'https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/pexels-photo-415829-1920w.jpeg',
+      name: 'Kavita Gupta',
+      rating:5,
+      quote: "From property visits to the final paperwork, everything was handled with care and professionalism. I truly appreciate their honesty and dedication throughout the process.",
+      image: 'https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww',
     },
     {
-      name: 'The Mortons',
-      quote: "I wanted to sell quickly and at a good price. In just a few weeks, I got the price I wanted.",
-      image: 'https://irp.cdn-website.com/2fc78bdd/dms3rep/multi/opt/pexels-photo-3785079-1920w.jpeg',
+      name: 'Arjun Sen',
+      rating:4,
+      quote: "Their market knowledge and attention to detail helped me find the perfect property within my budget. I couldn't be happier with the experience and highly recommend their services.",
+      image: 'https://img.magnific.com/free-photo/young-handsome-man-wearing-casual-tshirt-blue-background-happy-face-smiling-with-crossed-arms-looking-camera-positive-person_839833-12963.jpg?semt=ais_test_b&w=740&q=80',
+    },
+
+    {
+      name: 'Rahul Vishwakarma',
+      rating:5,
+      quote: "From start to finish, the team was extremely professional and supportive. They guided me at every step and made the process incredibly easy. I'm very happy with my new home!",
+      image: 'https://img.magnific.com/free-photo/handsome-bearded-guy-posing-against-white-wall_273609-20597.jpg?semt=ais_hybrid&w=740&q=80',
     },
   ]
 
   const prevSlide = () => {
+    setDirection(-1)
     setCurrentSlide((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
   }
 
   const nextSlide = () => {
+    setDirection(1)
     setCurrentSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
   }
 
   return (
-    <section ref={revealRef} style={{ padding: '80px 0', backgroundColor: '#f5f5f5' }} className="section-padding">
-      <div className="container">
-        <h2 className="reveal-up delay-1" style={{ textAlign: 'center', marginBottom: 8 }}>
-          WHAT <span style={{ color: 'var(--color_2)', fontWeight: 700 }}>MY CLIENTS</span> SAY
-        </h2>
-        <div className="reveal-up delay-2" style={{ width: 60, height: 2, backgroundColor: 'var(--color_2)', marginBottom: 48, marginLeft: 'auto', marginRight: 'auto' }} />
+    <div className="py-16 md:py-[100px] bg-[#f5f5f5]">
+      <div className="container mx-auto px-5"style={{padding:"27px 0px 35px 0px"}}>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ textAlign: 'center', marginBottom: 20, fontSize: 'clamp(28px, 5vw, 36px)' }}
 
-        <div className="reveal-up delay-3" style={{ display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap' }}>
-          <div style={{ flex: 1, minWidth: 300 }}>
-            <img
-              src={testimonials[currentSlide].image}
-              alt={testimonials[currentSlide].name}
-              className="glass-shadow"
-              style={{ width: '100%', height: 'auto', borderRadius: 8 }}
-            />
-          </div>
-          <div style={{ flex: 1, minWidth: 300, padding: '0 20px' }}>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, marginBottom: 16, transition: 'all 0.3s' }}>
-              {testimonials[currentSlide].name}
-            </h3>
-            <p style={{ fontSize: 16, lineHeight: 1.8, color: '#2d2e32', fontStyle: 'italic', transition: 'all 0.3s' }}>
-              "{testimonials[currentSlide].quote}"
-            </p>
-          </div>
+        >
+          WHAT <span style={{ color: 'var(--color_2)', fontWeight: 700 }}>MY CLIENTS</span> SAY
+        </motion.h2>
+
+        <div className="relative min-h-[300px]">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentSlide}
+              custom={direction}
+              initial={{ opacity: 0, x: direction > 0 ? 100 : -100, rotateY: direction > 0 ? 15 : -15 }}
+              animate={{ opacity: 1, x: 0, rotateY: 0 }}
+              exit={{ opacity: 0, x: direction < 0 ? 100 : -100, rotateY: direction < 0 ? 15 : -15 }}
+              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              style={{ display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap' }}
+            >
+              <div style={{ flex: '1 1 300px', minWidth: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <motion.div
+                  className="glass-shadow relative overflow-hidden rounded-2xl bg-white border border-gray-100"
+                  style={{ width: 'min(100%, 340px)', aspectRatio: '4 / 5' }}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <img
+                    src={testimonials[currentSlide].image}
+                    alt={testimonials[currentSlide].name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+                  />
+                </motion.div>
+              </div>
+              <div style={{ flex: '1 1 300px', minWidth: 0, padding: '0 20px' }}>
+                <motion.h3
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, marginBottom: 8 }}
+                >
+                  {testimonials[currentSlide].name}
+                </motion.h3>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.25 }}
+                  className="flex items-center gap-1 mb-3"
+                >
+                  {[...Array(testimonials[currentSlide].rating)].map((_, index) => (
+                    <FaStar key={index} className="text-yellow-600 text-lg" />
+                  ))}
+                </motion.div>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  style={{ fontSize: 16, lineHeight: 1.8, color: '#2d2e32', fontStyle: 'italic' }}
+                >
+                  "{testimonials[currentSlide].quote}"
+                </motion.p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 32 }}>
-          <button
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 32}}
+        >
+         <motion.button
             onClick={prevSlide}
-            style={{
-              backgroundColor: 'var(--color_2)',
-              color: '#fff',
-              border: 'none',
-              width: 40,
-              height: 40,
-              borderRadius: '50%',
-              cursor: 'pointer',
-              fontSize: 16,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            className="hover-lift"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.15 }}
+            className="
+              relative w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-2)] to-[#8f0d13] text-white border-none cursor-pointer text-base flex items-center justify-center
+            "
             aria-label="Previous testimonial"
           >
             <i className="fas fa-arrow-left" />
-          </button>
-          <button
+          </motion.button>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            {testimonials.map((_, idx) => (
+              <motion.button
+                key={idx}
+                onClick={() => { setDirection(idx > currentSlide ? 1 : -1); setCurrentSlide(idx) }}
+                className={`border-none rounded-full cursor-pointer ${idx === currentSlide ? 'bg-[var(--color-2)]' : 'bg-gray-300'}`}
+                style={{ width: idx === currentSlide ? 24 : 10, height: 10, transition: 'all 0.3s' }}
+                animate={idx === currentSlide ? { width: 24 } : { width: 10 }}
+                whileHover={{ scale: 1.3 }}
+              />
+            ))}
+          </div>
+         <motion.button
             onClick={nextSlide}
-            style={{
-              backgroundColor: 'var(--color_2)',
-              color: '#fff',
-              border: 'none',
-              width: 40,
-              height: 40,
-              borderRadius: '50%',
-              cursor: 'pointer',
-              fontSize: 16,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            className="hover-lift"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.15 }}
+            className="relative w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-2)] to-[#8f0d13] text-white border-none cursor-pointer text-base flex items-center justify-center"
             aria-label="Next testimonial"
           >
             <i className="fas fa-arrow-right" />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
-    </section>
+    </div>
   )
 }
