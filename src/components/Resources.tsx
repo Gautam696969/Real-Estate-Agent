@@ -69,7 +69,7 @@ const ARTICLES: ResourceArticle[] = [
     category: 'Market Analysis',
     readTime: '8 min read',
     date: 'August 2026',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D  ',
     excerpt: 'Comprehensive data analysis on inventory absorption rates, luxury median price growth, and buyer demographic shifts.',
     content: 'Demand for single-family residences in North Shore suburbs and luxury penthouses in downtown Chicago remains robust. Inventory trends indicate strong seller leverage in prime locations.',
     tags: ['Market Data', 'Luxury Real Estate', 'Analytics'],
@@ -81,7 +81,7 @@ const ARTICLES: ResourceArticle[] = [
     category: 'Buying',
     readTime: '4 min read',
     date: 'May 2026',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1661766386981-1140b7b37193?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmVzc2lvbmFsfGVufDB8fDB8fHww',
     excerpt: 'Ensure your agent has verified track records, negotiation skills, local expertise, and full-time dedication.',
     content: 'Choosing the right agent can save or net you tens of thousands of dollars. Ask about their recent sale-to-list price ratios, average days on market, and access to private network listings.',
     tags: ['Broker Selection', 'Advice', 'Buying Tips'],
@@ -453,7 +453,7 @@ export default function Resources() {
                 className="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-[0_4px_25px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_45px_rgba(226,27,34,0.12)] hover:border-[var(--color-2)]/40 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="h-[220px] overflow-hidden relative bg-gray-900">
+                  <div className="h-[300px] overflow-hidden relative bg-gray-900">
                     <img
                       src={article.image}
                       alt={article.title}
