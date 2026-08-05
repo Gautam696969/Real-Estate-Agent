@@ -1,20 +1,16 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const navigate = useNavigate()
-  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const sectionLinks = ['Resources', 'Contact']
 
   const linkStyle = {
     fontFamily: "'Muli', sans-serif",
@@ -24,18 +20,6 @@ export default function Navbar() {
 
   const navLinkClass =
     'group relative inline-block text-white transition-all duration-300 ease-out hover:-translate-y-[2px] hover:text-[#ffb0b3] after:absolute after:inset-x-0 after:-bottom-[3px] after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-[#e21b22] after:to-[#ff5a5f] after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100'
-
-  const goToSection = (e: React.MouseEvent, label: string) => {
-    e.preventDefault()
-    const id = label.toLowerCase().replace(/\s+/g, '-')
-    if (location.pathname !== '/') {
-      navigate('/')
-      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 150)
-    } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    }
-    setMenuOpen(false)
-  }
 
   return (
     <motion.header
@@ -89,17 +73,22 @@ export default function Navbar() {
           >
             About Us
           </Link>
-          {sectionLinks.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-              onClick={(e) => goToSection(e, item)}
-              style={linkStyle}
-              className={navLinkClass}
-            >
-              {item}
-            </a>
-          ))}
+          <Link
+            to="/resources"
+            onClick={() => setMenuOpen(false)}
+            style={linkStyle}
+            className={navLinkClass}
+          >
+            Resources
+          </Link>
+          <Link
+            to="/contact"
+            onClick={() => setMenuOpen(false)}
+            style={linkStyle}
+            className={navLinkClass}
+          >
+            Contact
+          </Link>
         </nav>
 
         <motion.button
@@ -147,17 +136,22 @@ export default function Navbar() {
               >
                 About Us
               </Link>
-              {sectionLinks.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                  onClick={(e) => goToSection(e, item)}
-                  className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
-                  style={linkStyle}
-                >
-                  {item}
-                </a>
-              ))}
+              <Link
+                to="/resources"
+                onClick={() => setMenuOpen(false)}
+                className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
+                style={linkStyle}
+              >
+                Resources
+              </Link>
+              <Link
+                to="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
+                style={linkStyle}
+              >
+                Contact
+              </Link>
             </div>
           </motion.div>
         )}
