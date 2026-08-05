@@ -1,6 +1,16 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+}
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+}
+
 export default function ContactUs() {
   const [formData, setFormData] = useState({
     name: '',
@@ -81,51 +91,71 @@ export default function ContactUs() {
       </section>
 
       {/* ==================== CONTACT INFO CARDS ==================== */}
-      <section className="py-12 md:py-16 -mt-12 relative z-20 container mx-auto px-5">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white rounded-3xl p-7 border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-red-50 text-[var(--color-2)] flex items-center justify-center text-xl mb-4">
-              <i className="fas fa-map-marker-alt" />
-            </div>
-            <h3 className="font-muli font-bold text-[16px] text-gray-900">Main Office</h3>
-            <p className="font-muli text-[13px] text-gray-600 mt-2 leading-relaxed">
-              1000 W Fulton Market, Suite 400<br />Chicago, IL 60607
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-7 border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-red-50 text-[var(--color-2)] flex items-center justify-center text-xl mb-4">
-              <i className="fas fa-phone-alt" />
-            </div>
-            <h3 className="font-muli font-bold text-[16px] text-gray-900">Direct Phone</h3>
-            <p className="font-muli text-[13px] text-gray-600 mt-2 leading-relaxed">
-              <a href="tel:2247723760" className="hover:text-[var(--color-2)] transition-colors block">(224) 772-3760</a>
-              <a href="tel:2244364201" className="hover:text-[var(--color-2)] transition-colors block">(224) 436-4201</a>
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-7 border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-red-50 text-[var(--color-2)] flex items-center justify-center text-xl mb-4">
-              <i className="fas fa-envelope" />
-            </div>
-            <h3 className="font-muli font-bold text-[16px] text-gray-900">Email Address</h3>
-            <p className="font-muli text-[13px] text-gray-600 mt-2 leading-relaxed break-all">
-              <a href="mailto:sourav.mukherjee@ravmoyaanrealty.com" className="hover:text-[var(--color-2)] transition-colors block">sourav.mukherjee@...</a>
-              <a href="mailto:taylorcalacci@gmail.com" className="hover:text-[var(--color-2)] transition-colors block">taylorcalacci@gmail.com</a>
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-7 border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-red-50 text-[var(--color-2)] flex items-center justify-center text-xl mb-4">
-              <i className="fas fa-clock" />
-            </div>
-            <h3 className="font-muli font-bold text-[16px] text-gray-900">Hours of Operation</h3>
-            <p className="font-muli text-[13px] text-gray-600 mt-2 leading-relaxed">
-              Mon – Sun: 8:00 AM – 8:00 PM<br />
-              <span className="text-[var(--color-2)] font-semibold">24/7 Client Advisory</span>
-            </p>
-          </div>
-        </div>
+      <section className="pb-12 md:py-16 relative z-20 container mx-auto px-5" style={{paddingBottom:'0px'}}>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+        >
+          {[
+            {
+              icon: 'fas fa-map-marker-alt',
+              title: 'Main Office',
+              content: (
+                <>
+                  1000 W Fulton Market, Suite 400<br />Chicago, IL 60607
+                </>
+              ),
+            },
+            {
+              icon: 'fas fa-phone-alt',
+              title: 'Direct Phone',
+              content: (
+                <>
+                  <a href="tel:2247723760" className="hover:text-[var(--color-2)] transition-colors block">(224) 772-3760</a>
+                  <a href="tel:2244364201" className="hover:text-[var(--color-2)] transition-colors block">(224) 436-4201</a>
+                </>
+              ),
+            },
+            {
+              icon: 'fas fa-envelope',
+              title: 'Email Address',
+              content: (
+                <>
+                  <a href="mailto:[EMAIL_ADDRESS]" className="hover:text-[var(--color-2)] transition-colors block">jhone@...</a>
+                  <a href="mailto:[EMAIL_ADDRESS]" className="hover:text-[var(--color-2)] transition-colors block">athens@gmail.com</a>
+                </>
+              ),
+            },
+            {
+              icon: 'fas fa-clock',
+              title: 'Hours of Operation',
+              content: (
+                <>
+                  Mon – Sun: 8:00 AM – 8:00 PM<br />
+                  <span className="text-[var(--color-2)] font-semibold">24/7 Client Advisory</span>
+                </>
+              ),
+            },
+          ].map((card) => (
+            <motion.div
+              key={card.title}
+              variants={cardVariants}
+              whileHover={{ y: -10 }}
+              className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200/80 shadow-[0_4px_20px_rgba(17,17,17,0.05)] hover:shadow-[0_20px_45px_rgba(226,27,34,0.14)] hover:border-[var(--color-2)] transition-all duration-300 p-6 md:p-8 flex flex-col"
+            >
+              <span className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-2)] via-[#ff5a5f] to-[var(--color-2)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--color-2)] to-[#c0151b] text-white flex items-center justify-center text-[20px] shadow-[0_10px_22px_rgba(226,27,34,0.3)] group-hover:scale-105 transition-transform duration-300">
+                <i className={card.icon} />
+              </div>
+              <h4 className="mt-6 text-[18px] font-muli font-bold text-gray-900">{card.title}</h4>
+              <span className="w-9 h-[2px] bg-[var(--color-2)] mt-3 transition-all duration-300 group-hover:w-14" />
+              <p className="mt-3 text-[14px] text-[#666] font-muli leading-relaxed flex-1 break-words">{card.content}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
       {/* ==================== FORM & MAP SECTION ==================== */}
@@ -350,11 +380,11 @@ export default function ContactUs() {
               <div className="flex items-center gap-4">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80"
-                  alt="Taylor Calacci"
+                  alt="Hasmukh Shah"
                   className="w-14 h-14 rounded-full object-cover border-2 border-[var(--color-2)]"
                 />
                 <div>
-                  <h4 className="font-muli font-bold text-[16px]">Taylor Calacci</h4>
+                  <h4 className="font-muli font-bold text-[16px]">Hasmukh Shah</h4>
                   <p className="text-[12px] font-muli text-[#ff8080] font-semibold">Senior Luxury Advisor</p>
                   <a href="tel:2244364201" className="text-[12px] text-gray-300 hover:text-white font-muli block mt-0.5">
                     (224) 436-4201

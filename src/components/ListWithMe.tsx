@@ -34,7 +34,7 @@ const steps = [
 
 const contacts = [
   { icon: 'fas fa-phone', label: 'Call or Text', value: '(224) 436-4201', href: 'tel:+12244364201' },
-  { icon: 'fas fa-envelope', label: 'Email', value: 'taylorcalacci@gmail.com', href: 'mailto:taylorcalacci@gmail.com' },
+  { icon: 'fas fa-envelope', label: 'Email', value: 'athens@gmail.com', href: 'mailto:athens@gmail.com' },
   { icon: 'fas fa-map-marker-alt', label: 'Office', value: '3323 W. Diversey Ave., Chicago, IL 60647', href: null },
 ]
 

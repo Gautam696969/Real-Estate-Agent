@@ -34,7 +34,7 @@ export default function Navbar() {
         <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Home">
           <img
             src="/RMY Icon.svg"
-            alt="Taylor Calacci Logo"
+            alt="RMY Logo"
             style={{ height: 50, width: 'auto', maxWidth: '40vw' }}
           />
         </Link>

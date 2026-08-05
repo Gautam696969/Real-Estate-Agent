@@ -45,17 +45,17 @@ const teamMembers = [
   {
     name: 'Sourav Mukherjee',
     role: 'Principal Broker & Founder',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80',
+    image: 'https://ravmoyaanrealty.com/images/team/sir.png',
     bio: 'Over 12 years of leadership in Chicago luxury residential properties, investment portfolio strategy, and high-stakes negotiation.',
     email: 'sourav.mukherjee@ravmoyaanrealty.com',
     phone: '(224) 772-3760',
   },
   {
-    name: 'Taylor Calacci',
+    name: 'Sophia Williams',
     role: 'Senior Luxury Agent',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80',
     bio: 'Specializing in West Loop, River North, and Gold Coast penthouses with a dedicated focus on seamless client experiences.',
-    email: 'taylorcalacci@gmail.com',
+    email: 'athens@gmail.com',
     phone: '(224) 436-4201',
   },
   {
