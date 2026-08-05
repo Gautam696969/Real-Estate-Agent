@@ -33,7 +33,7 @@ export default function Footer() {
     { label: 'Resources', href: '/resources' },
     { label: 'Featured Listings', href: '#featured' },
     { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact', href: '/contact' },
   ]
 
   const services = [
