@@ -14,7 +14,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const sectionLinks = ['About Us', 'Resources', 'Contact']
+  const sectionLinks = ['Resources', 'Contact']
 
   const linkStyle = {
     fontFamily: "'Muli', sans-serif",
@@ -81,6 +81,14 @@ export default function Navbar() {
           >
             Find A Home
           </Link>
+          <Link
+            to="/about-us"
+            onClick={() => setMenuOpen(false)}
+            style={linkStyle}
+            className={navLinkClass}
+          >
+            About Us
+          </Link>
           {sectionLinks.map((item) => (
             <a
               key={item}
@@ -130,6 +138,14 @@ export default function Navbar() {
                 style={linkStyle}
               >
                 Find A Home
+              </Link>
+              <Link
+                to="/about-us"
+                onClick={() => setMenuOpen(false)}
+                className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
+                style={linkStyle}
+              >
+                About Us
               </Link>
               {sectionLinks.map((item) => (
                 <a
