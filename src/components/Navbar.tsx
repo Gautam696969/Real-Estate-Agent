@@ -23,7 +23,7 @@ export default function Navbar() {
   }
 
   const navLinkClass =
-    'group relative inline-block pb-1 text-white transition-all duration-300 ease-out hover:-translate-y-[2px] hover:text-[#ffb0b3] after:absolute after:inset-x-0 after:-bottom-[3px] after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-[#e21b22] after:to-[#ff5a5f] after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100'
+    'group relative inline-block text-white transition-all duration-300 ease-out hover:-translate-y-[2px] hover:text-[#ffb0b3] after:absolute after:inset-x-0 after:-bottom-[3px] after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-[#e21b22] after:to-[#ff5a5f] after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100'
 
   const goToSection = (e: React.MouseEvent, label: string) => {
     e.preventDefault()
