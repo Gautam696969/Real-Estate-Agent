@@ -26,9 +26,9 @@ export default function Footer() {
   }
 
   const quickLinks = [
-    { label: 'Home', href: '#' },
+    { label: 'Home', href: '/' },
     { label: 'List With Me', href: '/list-with-me' },
-    { label: 'Find a Home', href: '#find-a-home' },
+    { label: 'Find a Home', href: '/find-a-home' },
     { label: 'Featured Listings', href: '#featured' },
     { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
