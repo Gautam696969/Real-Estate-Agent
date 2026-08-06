@@ -360,7 +360,7 @@ export default function FeaturedListings() {
 
                         <button
                           type="submit"
-                          className="w-full mt-2 bg-[var(--color-2)] text-white py-3 rounded-xl text-[12px] font-muli font-bold uppercase tracking-wider shadow-md hover:brightness-110 transition-all flex items-center justify-center gap-1.5"
+                          className="w-full mt-2 bg-[var(--color-2)] text-black py-3 rounded-xl text-[12px] font-muli font-bold uppercase tracking-wider shadow-md hover:brightness-110 transition-all flex items-center justify-center gap-1.5"
                         >
                           <i className="fas fa-calendar-check" /> Confirm Showing
                         </button>
