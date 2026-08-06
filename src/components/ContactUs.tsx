@@ -363,7 +363,7 @@ export default function ContactUs() {
 
               <div className="flex items-center gap-4 pb-4 border-b border-white/10">
                 <img
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80"
+                  src="https://ravmoyaanrealty.com/images/team/sir.png"
                   alt="Sourav Mukherjee"
                   className="w-14 h-14 rounded-full object-cover border-2 border-[var(--color-2)]"
                 />
@@ -378,7 +378,7 @@ export default function ContactUs() {
 
               <div className="flex items-center gap-4">
                 <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80"
+                  src="https://media.istockphoto.com/id/1250504146/photo/indian-businessman-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=2n26sPvWJUr-1ywXpdRdM_-4AuTJJ2Iz4ECYMP6ipZ0="
                   alt="Hasmukh Shah"
                   className="w-14 h-14 rounded-full object-cover border-2 border-[var(--color-2)]"
                 />

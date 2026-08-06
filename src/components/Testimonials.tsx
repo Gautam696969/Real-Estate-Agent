@@ -10,13 +10,13 @@ export default function Testimonials() {
       name: 'Vinay Sharma',
       rating:5,
       quote: "The team made my home-buying experience smooth and stress-free. They understood my requirements, kept me informed throughout the process, and helped me find the perfect property. I highly recommend their services.",
-      image: 'https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29uc3xlbnwwfHwwfHx8MA%3D%3D',
+      image: 'https://images.unsplash.com/photo-1718209881007-c0ecdfc00f9d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       name: 'Kavita Gupta',
       rating:5,
       quote: "From property visits to the final paperwork, everything was handled with care and professionalism. I truly appreciate their honesty and dedication throughout the process.",
-      image: 'https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww',
+      image: 'https://images.unsplash.com/photo-1655215993637-5a20b1095d54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ5fHx8ZW58MHx8fHx8',
     },
     {
       name: 'Arjun Sen',
