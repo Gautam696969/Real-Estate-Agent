@@ -114,8 +114,8 @@ export default function ContactUs() {
               title: 'Direct Phone',
               content: (
                 <>
-                  <a href="tel:2247723760" className="hover:text-[var(--color-2)] transition-colors block">(224) 772-3760</a>
-                  <a href="tel:2244364201" className="hover:text-[var(--color-2)] transition-colors block">(224) 436-4201</a>
+                  <a href="tel:2247723760" className="hover:text-[var(--color-2)] transition-colors block">(224) 772 3760</a>
+                  <a href="tel:2244364201" className="hover:text-[var(--color-2)] transition-colors block">(224) 772 3760</a>
                 </>
               ),
             },
@@ -124,8 +124,7 @@ export default function ContactUs() {
               title: 'Email Address',
               content: (
                 <>
-                  <a href="mailto:[EMAIL_ADDRESS]" className="hover:text-[var(--color-2)] transition-colors block">jhone@...</a>
-                  <a href="mailto:[EMAIL_ADDRESS]" className="hover:text-[var(--color-2)] transition-colors block">athens@gmail.com</a>
+                  <a href="mailto:sourav.mukherjee@ravmoyaanrealty.com" className="hover:text-[var(--color-2)] transition-colors block">sourav.mukherjee@ravmoyaanrealty.com</a>
                 </>
               ),
             },
