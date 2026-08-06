@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22, marginLeft:-38}}>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22}}>
               Quick <span style={{ color: 'var(--color-2)' }}>Links</span>
             </h3>
             <nav className="flex flex-col gap-2.5">
