@@ -33,8 +33,8 @@ const steps = [
 ]
 
 const contacts = [
-  { icon: 'fas fa-phone', label: 'Call or Text', value: '(224) 436-4201', href: 'tel:+12244364201' },
-  { icon: 'fas fa-envelope', label: 'Email', value: 'athens@gmail.com', href: 'mailto:athens@gmail.com' },
+  { icon: 'fas fa-phone', label: 'Call or Text', value: '(224) 772 3760', href: 'tel:(224) 772 3760' },
+  { icon: 'fas fa-envelope', label: 'Email', value: 'sourav.mukherjee@ravmoyaanrealty.com', href: 'sourav.mukherjee@ravmoyaanrealty.com' },
   { icon: 'fas fa-map-marker-alt', label: 'Office', value: '3323 W. Diversey Ave., Chicago, IL 60647', href: null },
 ]
 
@@ -254,9 +254,6 @@ export default function ListWithMe() {
               >
                 <div className="relative mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-2)] to-[#c0151b] text-white flex items-center justify-center text-[22px] shadow-[0_10px_25px_rgba(226,27,34,0.35)] group-hover:scale-110 transition-transform duration-300">
                   <i className={step.icon} />
-                  <span className="absolute -top-2.5 -right-2.5 w-7 h-7 rounded-full bg-white text-[var(--color-2)] text-[13px] font-muli font-bold flex items-center justify-center shadow-md border border-gray-100">
-                    {i + 1}
-                  </span>
                 </div>
                 <h4 className="mt-6 text-[17px] font-muli font-bold text-white">{step.title}</h4>
                 <p className="mt-2.5 text-[14px] text-[#bbb] font-muli leading-relaxed">{step.desc}</p>

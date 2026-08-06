@@ -120,7 +120,7 @@ export default function FeaturedListings() {
                   <motion.h3
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="text-[var(--color-2)] font-cormorant text-[24px] md:text-[26px] mb-2" style={{marginLeft:"15px"}}
+                    className="text-[var(--color-2)] font-cormorant text-[20px] md:text-[22px] mb-2" style={{marginLeft:"15px"}}
                   >
                     {prop.price}
                   </motion.h3>
