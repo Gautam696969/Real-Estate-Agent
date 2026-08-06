@@ -120,25 +120,53 @@ export default function FeaturedListings() {
 
   return (
     <>
-    <section id="featured" className="bg-[#f5f5f5] flex flex-col py-16 md:py-24">
-    
+    <section id="featured" className="bg-[#f5f5f5] flex flex-col py-12 md:py-24">
       <div className="container mx-auto px-5">
-        <motion.h2
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-[32px] sm:text-[45px] font-cormorant font-normal py-8 text-gray-900"
-          style={{ color: "black", margin: "27px 0 13px 0" }}
-        >
-          Featured Listings
-        </motion.h2>
+        <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-14">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[var(--color-2)]/10 border border-[var(--color-2)]/30 text-[var(--color-2)] text-[12px] md:text-[13px] font-muli uppercase tracking-[0.25em] font-bold"
+          >
+            <i className="fas fa-house" /> Handpicked Homes
+          </motion.span>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-4 text-[32px] sm:text-[44px] md:text-[52px] font-cormorant font-bold text-gray-900 leading-tight"
+          >
+            Featured <span className="italic text-[var(--color-2)]">Listings</span>
+          </motion.h2>
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mx-auto w-16 h-[3px] rounded-full bg-gradient-to-r from-[var(--color-2)] to-[#ff5a5f] mt-4"
+            style={{ transformOrigin: 'center' }}
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-5 font-muli text-[15px] md:text-[16px] text-[#666] leading-relaxed"
+          >
+            Explore a hand-selected portfolio of premier Chicago residences — each vetted for location, quality, and investment value.
+          </motion.p>
+        </div>
       </div>
 
-      <div className="flex items-center">
-        <div className="container mx-auto px-5" style={{padding: '27px 0 40px 0'}}>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      <div className="container mx-auto px-5 pb-10">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -214,7 +242,6 @@ export default function FeaturedListings() {
               </motion.div>
             ))}
           </motion.div>
-        </div>
       </div>
     </section>
 
@@ -244,7 +271,7 @@ export default function FeaturedListings() {
               </button>
 
               <div className="overflow-y-auto flex-1">
-                <div className="relative h-[300px] sm:h-[380px] bg-gray-900">
+                <div className="relative h-[220px] sm:h-[300px] lg:h-[380px] bg-gray-900">
                   <img
                     src={activeProperty.image}
                     alt={activeProperty.title}
@@ -267,14 +294,14 @@ export default function FeaturedListings() {
 
                 <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
                   <div className="lg:col-span-2 space-y-6">
-                    <div className="flex items-center justify-between pb-4 border-b border-gray-100">
+                    <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-gray-100">
                       <div>
                         <span className="text-[12px] font-muli uppercase tracking-wider text-gray-500">Price</span>
-                        <div className="text-[32px] font-cormorant font-bold text-[var(--color-2)] leading-none">
+                        <div className="text-[28px] sm:text-[32px] font-cormorant font-bold text-[var(--color-2)] leading-none">
                           {activeProperty.price}
                         </div>
                       </div>
-                      <div className="flex items-center gap-4 text-[14px] font-muli font-bold text-gray-800">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] sm:text-[14px] font-muli font-bold text-gray-800">
                         <span><i className="fas fa-bed text-[var(--color-2)] mr-1.5" />{activeProperty.bedrooms} Beds</span>
                         <span><i className="fas fa-bath text-[var(--color-2)] mr-1.5" />{activeProperty.bathrooms} Baths</span>
                         <span><i className="fas fa-ruler-combined text-[var(--color-2)] mr-1.5" />{activeProperty.sqft.toLocaleString()} sqft</span>
