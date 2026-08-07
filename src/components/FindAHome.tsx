@@ -862,14 +862,14 @@ export default function FindAHome() {
                 <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
                   {/* Left Specs & Overview */}
                   <div className="lg:col-span-2 space-y-6">
-                    <div className="flex items-center justify-between pb-4 border-b border-gray-100">
+                    <div className="modal-price-specs flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-gray-100 gap-3 sm:gap-0">
                       <div>
                         <span className="text-[12px] font-muli uppercase tracking-wider text-gray-500">Price</span>
-                        <div className="text-[32px] font-cormorant font-bold text-[var(--color-2)] leading-none">
+                        <div className="price-text text-[14px] sm:text-[32px] font-cormorant font-bold text-[var(--color-2)] leading-none">
                           {activeProperty.formattedPrice}
                         </div>
                       </div>
-                      <div className="flex items-center gap-4 text-[14px] font-muli font-bold text-gray-800">
+                      <div className="specs-text flex items-center gap-3 sm:gap-4 text-[13px] sm:text-[14px] font-muli font-bold text-gray-800">
                         <span><i className="fas fa-bed text-[var(--color-2)] mr-1.5" />{activeProperty.bedrooms} Beds</span>
                         <span><i className="fas fa-bath text-[var(--color-2)] mr-1.5" />{activeProperty.bathrooms} Baths</span>
                         <span><i className="fas fa-ruler-combined text-[var(--color-2)] mr-1.5" />{activeProperty.sqft.toLocaleString()} sqft</span>
@@ -958,7 +958,7 @@ export default function FindAHome() {
                           type="submit"
                           className="w-full mt-2 bg-[var(--color-2)] text-black py-3 rounded-xl text-[12px] font-muli font-bold uppercase tracking-wider shadow-md hover:brightness-110 transition-all flex items-center justify-center gap-1.5"
                         >
-                          <i className="fas fa-calendar-check" /> Confirm Showing
+                           <i className="fas fa-calendar-check" /> okay
                         </button>
 
                         {tourSubmitted && (
@@ -981,6 +981,17 @@ export default function FindAHome() {
           </div>
         )}
       </AnimatePresence>
+      <style>{`
+        @media (max-width: 450px) {
+          .modal-price-specs .price-text {
+            font-size: 20px !important;
+          }
+          .modal-price-specs .specs-text {
+            font-size: 12px !important;
+            gap: 8px !important;
+          }
+        }
+      `}</style>
     </div>
   )
 }
