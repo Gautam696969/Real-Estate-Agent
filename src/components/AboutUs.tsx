@@ -286,7 +286,7 @@ export default function AboutUs() {
               transition={{ duration: 0.5 }}
               className="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-[0_4px_25px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_45px_rgba(226,27,34,0.12)] hover:border-[var(--color-2)]/40 transition-all duration-300 flex flex-col"
             >
-              <div className="h-[150px] sm:h-[400px] overflow-hidden relative bg-gray-900">
+              <div className="h-[450px] sm:h-[500px] overflow-hidden relative bg-gray-900">
                 <img
                   src={member.image}
                   alt={member.name}
