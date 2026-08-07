@@ -7,10 +7,13 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+      if (menuOpen) setMenuOpen(false)
+    }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [menuOpen])
 
   const linkStyle = {
     fontFamily: "'Muli', sans-serif",
@@ -34,6 +37,7 @@ export default function Navbar() {
         <Link
           to="/"
           onClick={(e) => {
+            setMenuOpen(false)
             if (window.location.pathname === '/') {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: 'smooth' })
