@@ -31,8 +31,6 @@ export default function Footer() {
     { label: 'Find a Home', href: '/find-a-home' },
     { label: 'About Us', href: '/about-us' },
     { label: 'Resources', href: '/resources' },
-    { label: 'Featured Listings', href: '#featured' },
-    { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '/contact' },
   ]
 
