@@ -243,7 +243,7 @@ export default function Footer() {
       <style>{`
         @media (min-width: 1025px) and (max-width: 1144px) {
           .footer-email {
-            font-size: 12px !important;
+            font-size: 15px !important;
             word-break: break-all;
           }
         }
