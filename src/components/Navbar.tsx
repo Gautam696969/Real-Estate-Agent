@@ -31,7 +31,17 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-[70px] w-full max-w-[1200px] items-center justify-between px-5 py-3 md:h-[100px]">
-        <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Home">
+        <Link
+          to="/"
+          onClick={(e) => {
+            if (window.location.pathname === '/') {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+          }}
+          className="flex shrink-0 items-center gap-3"
+          aria-label="Home"
+        >
           <img
             src="/RMY Icon.svg"
             alt="RMY Logo"
@@ -112,6 +122,14 @@ export default function Navbar() {
             className="lg:hidden bg-[#111] overflow-hidden border-t border-white/10"
           >
             <div className="px-5 pb-6 flex flex-col gap-5">
+              <Link
+                to="/"
+                onClick={() => setMenuOpen(false)}
+                style={linkStyle}
+                className="text-[15px] py-1 pt-5 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
+              >
+                Home
+              </Link>
               <Link
                 to="/list-with-me"
                 onClick={() => setMenuOpen(false)}
