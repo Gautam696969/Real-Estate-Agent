@@ -246,7 +246,7 @@ export default function ListWithMe() {
           >
             <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-[2px] bg-gradient-to-r from-white/10 via-[var(--color-2)]/40 to-white/10 pointer-events-none" />
 
-            {steps.map((step, i) => (
+            {steps.map((step) => (
               <motion.div
                 key={step.title}
                 variants={cardVariants}
