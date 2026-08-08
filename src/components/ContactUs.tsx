@@ -378,8 +378,8 @@ export default function ContactUs() {
 
               <div className="flex items-center gap-4">
                 <img
-                  src="https://media.istockphoto.com/id/1250504146/photo/indian-businessman-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=2n26sPvWJUr-1ywXpdRdM_-4AuTJJ2Iz4ECYMP6ipZ0="
-                  alt="Hasmukh Shah"
+                  src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D="
+                  alt="Rohan Kapoor"
                   className="w-14 h-14 rounded-full object-cover border-2 border-[var(--color-2)]"
                 />
                 <div>
