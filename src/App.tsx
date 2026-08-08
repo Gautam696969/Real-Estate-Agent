@@ -3,6 +3,10 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ListWithMe from './components/ListWithMe'
+import FindAHome from './components/FindAHome'
+import AboutUs from './components/AboutUs'
+import Resources from './components/Resources'
+import ContactUs from './components/ContactUs'
 import ProvenResults from './components/ProvenResults'
 import InnovativeIdeas from './components/InnovativeIdeas'
 import FeaturedListings from './components/FeaturedListings'
@@ -67,6 +71,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/list-with-me" element={<ListWithMe />} />
+        <Route path="/find-a-home" element={<FindAHome />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
       <Footer />
       <WhatsAppButton/>

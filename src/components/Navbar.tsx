@@ -1,20 +1,19 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const navigate = useNavigate()
-  const location = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+      if (menuOpen) setMenuOpen(false)
+    }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const sectionLinks = ['FIND A HOME', 'About Us', 'Resources', 'Contact']
+  }, [menuOpen])
 
   const linkStyle = {
     fontFamily: "'Muli', sans-serif",
@@ -24,18 +23,6 @@ export default function Navbar() {
 
   const navLinkClass =
     'group relative inline-block text-white transition-all duration-300 ease-out hover:-translate-y-[2px] hover:text-[#ffb0b3] after:absolute after:inset-x-0 after:-bottom-[3px] after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-[#e21b22] after:to-[#ff5a5f] after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100'
-
-  const goToSection = (e: React.MouseEvent, label: string) => {
-    e.preventDefault()
-    const id = label.toLowerCase().replace(/\s+/g, '-')
-    if (location.pathname !== '/') {
-      navigate('/')
-      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 150)
-    } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    }
-    setMenuOpen(false)
-  }
 
   return (
     <motion.header
@@ -47,10 +34,21 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-[70px] w-full max-w-[1200px] items-center justify-between px-5 py-3 md:h-[100px]">
-        <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Home">
+        <Link
+          to="/"
+          onClick={(e) => {
+            setMenuOpen(false)
+            if (window.location.pathname === '/') {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+          }}
+          className="flex shrink-0 items-center gap-3"
+          aria-label="Home"
+        >
           <img
             src="/RMY Icon.svg"
-            alt="Taylor Calacci Logo"
+            alt="RMY Logo"
             style={{ height: 50, width: 'auto', maxWidth: '40vw' }}
           />
         </Link>
@@ -73,17 +71,38 @@ export default function Navbar() {
           >
             List With Me
           </Link>
-          {sectionLinks.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-              onClick={(e) => goToSection(e, item)}
-              style={linkStyle}
-              className={navLinkClass}
-            >
-              {item}
-            </a>
-          ))}
+          <Link
+            to="/find-a-home"
+            onClick={() => setMenuOpen(false)}
+            style={linkStyle}
+            className={navLinkClass}
+          >
+            Find A Home
+          </Link>
+          <Link
+            to="/about-us"
+            onClick={() => setMenuOpen(false)}
+            style={linkStyle}
+            className={navLinkClass}
+          >
+            About Us
+          </Link>
+          <Link
+            to="/resources"
+            onClick={() => setMenuOpen(false)}
+            style={linkStyle}
+            className={navLinkClass}
+          >
+            Resources
+          </Link>
+          <Link
+            to="/contact"
+            onClick={() => setMenuOpen(false)}
+            style={linkStyle}
+            className={navLinkClass}
+          >
+            Contact
+          </Link>
         </nav>
 
         <motion.button
@@ -108,6 +127,14 @@ export default function Navbar() {
           >
             <div className="px-5 pb-6 flex flex-col gap-5">
               <Link
+                to="/"
+                onClick={() => setMenuOpen(false)}
+                style={linkStyle}
+                className="text-[15px] py-1 pt-5 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
+              >
+                Home
+              </Link>
+              <Link
                 to="/list-with-me"
                 onClick={() => setMenuOpen(false)}
                 className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
@@ -115,17 +142,38 @@ export default function Navbar() {
               >
                 List With Me
               </Link>
-              {sectionLinks.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                  onClick={(e) => goToSection(e, item)}
-                  className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
-                  style={linkStyle}
-                >
-                  {item}
-                </a>
-              ))}
+              <Link
+                to="/find-a-home"
+                onClick={() => setMenuOpen(false)}
+                className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
+                style={linkStyle}
+              >
+                Find A Home
+              </Link>
+              <Link
+                to="/about-us"
+                onClick={() => setMenuOpen(false)}
+                className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
+                style={linkStyle}
+              >
+                About Us
+              </Link>
+              <Link
+                to="/resources"
+                onClick={() => setMenuOpen(false)}
+                className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
+                style={linkStyle}
+              >
+                Resources
+              </Link>
+              <Link
+                to="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="text-[15px] py-1 border-b border-white/10 text-white transition-all duration-300 hover:translate-x-1 hover:text-[#ffb0b3]"
+                style={linkStyle}
+              >
+                Contact
+              </Link>
             </div>
           </motion.div>
         )}

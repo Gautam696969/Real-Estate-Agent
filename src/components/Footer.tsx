@@ -26,12 +26,12 @@ export default function Footer() {
   }
 
   const quickLinks = [
-    { label: 'Home', href: '#' },
+    { label: 'Home', href: '/' },
     { label: 'List With Me', href: '/list-with-me' },
-    { label: 'Find a Home', href: '#find-a-home' },
-    { label: 'Featured Listings', href: '#featured' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Find a Home', href: '/find-a-home' },
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Resources', href: '/resources' },
+    { label: 'Contact', href: '/contact' },
   ]
 
   const services = [
@@ -100,7 +100,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22, marginLeft:-38}}>
+            <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22}}>
               Quick <span style={{ color: 'var(--color-2)' }}>Links</span>
             </h3>
             <nav className="flex flex-col gap-2.5">
@@ -155,11 +155,11 @@ export default function Footer() {
             <h3 className="text-white mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 22 }}>
               Get in <span style={{ color: 'var(--color-2)' }}>Touch</span>
             </h3>
-            <div className="flex flex-col gap-2.5 mb-6" style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14 }}>
-              <p className="flex items-center gap-2"style={{color:"#ff6666"}}>
-                <i className="fas fa-envelope text-[var(--color-2)]" /> sourav.mukherjee@ravmoyaanrealty.com
-
-              </p>
+              <div className="flex flex-col gap-2.5 mb-6" style={{ color: '#ccc', fontFamily: "'Muli', sans-serif", fontSize: 14 }}>
+                <p className="flex items-center gap-2 flex-wrap" style={{color:"#ff6666"}}>
+                  <i className="fas fa-envelope text-[var(--color-2)] shrink-0" />
+                  <span className="footer-email">sourav.mukherjee@ravmoyaanrealty.com</span>
+                </p>
               <p className="flex items-center gap-2" style={{color:"#ff6666"}}>
                 <i className="fas fa-phone text-[var(--color-2)]" /> (224) 772 3760
               </p>
@@ -238,6 +238,14 @@ export default function Footer() {
           </div>
         </motion.div>
       </motion.div>
+      <style>{`
+        @media (min-width: 1025px) and (max-width: 1144px) {
+          .footer-email {
+            font-size: 15px !important;
+            word-break: break-all;
+          }
+        }
+      `}</style>
     </AnimatedSection>
   )
 }
